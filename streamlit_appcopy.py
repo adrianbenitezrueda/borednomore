@@ -155,24 +155,6 @@ def main():
         time_text = f"{hours}h {minutes}min" if hours > 0 else f"{minutes}min"
         st.markdown(f"<div class='highlight'>Tiempo seleccionado: {time_text}</div>", unsafe_allow_html=True)
 
-    # Mostrar la tarea actual solo después de que el tiempo ha sido seleccionado
-    if available_time:
-        # Inicializar o actualizar la lista de tareas excluidas
-        if 'excluded_tasks' not in st.session_state:
-            st.session_state.excluded_tasks = set()
-
-        # Obtener la tarea inicial si no existe
-        if 'current_task' not in st.session_state:
-            st.session_state.current_task = suggest_task(is_good_weather, available_time)
-            if st.session_state.current_task is not None:
-                st.session_state.excluded_tasks.add(st.session_state.current_task['Nombre_Tarea'])
-
-        # Mostrar la tarea actual
-        with task_container:
-            st.markdown("### 💡 Sugerencia de actividad")
-            if st.session_state.current_task is not None:
-                display_task_card(st.session_state.current_task)
-
     # Contenedor para la tarea principal
     task_container = st.container()
     
@@ -184,6 +166,22 @@ def main():
 
     is_good_weather = weather == 'good'
     
+    # Inicializar o actualizar la lista de tareas excluidas
+    if 'excluded_tasks' not in st.session_state:
+        st.session_state.excluded_tasks = set()
+
+    # Obtener la tarea inicial si no existe
+    if 'current_task' not in st.session_state:
+        st.session_state.current_task = suggest_task(is_good_weather, available_time)
+        if st.session_state.current_task is not None:
+            st.session_state.excluded_tasks.add(st.session_state.current_task['Nombre_Tarea'])
+
+    # Mostrar la tarea actual
+    with task_container:
+        st.markdown("### 💡 Sugerencia de actividad")
+        if st.session_state.current_task is not None:
+            display_task_card(st.session_state.current_task)
+
     # Botones de acción
     with button_container:
         col1, col2, col3 = st.columns(3)
