@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 
 # Cargar la API Key de Google desde Streamlit Secrets
-GOOGLE_API_KEY = st.secrets["google_api_key"]
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 
 # Ruta del archivo CSV con los municipios
 CSV_PATH = "data/raw/municipios_aemet.csv"

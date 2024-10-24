@@ -4,7 +4,7 @@ from datetime import datetime
 from collections import Counter
 
 # Cargar la API Key desde Streamlit Secrets
-AEMET_API_KEY = st.secrets["aemet_api_key"]
+AEMET_API_KEY = st.secrets["AEMET_API_KEY"]
 
 # Función para obtener la predicción climática (general) de AEMET
 def obtener_prediccion(codigo_municipio, tipo_prediccion):
