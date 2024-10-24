@@ -1,18 +1,26 @@
 import streamlit as st
 import pandas as pd
-import os
 import requests
-from dotenv import load_dotenv
 import random
-from geopy.geocoders import Nominatim  # Para geolocalización
 from googleplaces import GooglePlaces  # Para Google Places
 from giphy_client import DefaultApi as GiphyClient  # Para Giphy
 
-# Cargar API keys del archivo .env
-load_dotenv()
-google_api_key = os.getenv("GOOGLE_API_KEY")
-aemet_api_key = os.getenv("AEMET_API_KEY")
-giphy_api_key = os.getenv("GIPHY_API_KEY")
+# Cargar API keys desde streamlit secrets
+google_api_key = st.secrets["GOOGLE_API_KEY"]
+aemet_api_key = st.secrets["AEMET_API_KEY"]
+giphy_api_key = st.secrets["GIPHY_API_KEY"]
+
+# Función para obtener la ubicación del usuario usando Google Geocoding API
+def get_user_location():
+    url = f"https://maps.googleapis.com/maps/api/geocode/json?address=Cádiz,Spain&key={google_api_key}"
+    response = requests.get(url)
+    location_data = response.json()
+    if location_data['status'] == 'OK':
+        location = location_data['results'][0]['geometry']['location']
+        return location['lat'], location['lng']
+    else:
+        st.error("No se pudo obtener la ubicación.")
+        return None, None
 
 # Cargar los datasets de actividades y municipios
 indoor_activities = pd.read_csv('data/cleaned/home_activities.csv')
