@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import requests
-import datetime
+import random
 from googleplaces import GooglePlaces  # Para Google Places
 
 # Cargar API keys desde streamlit secrets
@@ -15,11 +15,10 @@ def get_user_location():
     location_data = response.json()
     if location_data['status'] == 'OK':
         location = location_data['results'][0]['geometry']['location']
-        address = location_data['results'][0]['formatted_address']
-        return location['lat'], location['lng'], address
+        return location['lat'], location['lng']
     else:
         st.error("No se pudo obtener la ubicación.")
-        return None, None, None
+        return None, None
 
 # Cargar los datasets de actividades y municipios
 indoor_activities = pd.read_csv('data/cleaned/home_activities.csv')
@@ -33,39 +32,16 @@ def get_nearest_municipio(lat, lon):
     nearest_municipio = municipios_aemet.loc[municipios_aemet['distancia'].idxmin()]
     return nearest_municipio
 
-# Función para obtener la predicción horaria de AEMET (para la temperatura actual)
-def get_hourly_temperature(nearest_municipio):
-    municipio_id = nearest_municipio['id']
-    url = f"https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/horaria/{municipio_id}?api_key={aemet_api_key}"
-    response = requests.get(url)
-    data = response.json()
-    
-    current_time = datetime.datetime.now().hour  # Hora actual
-    if 'prediccion' in data and 'temperatura' in data['prediccion']:
-        # Obtener la predicción horaria más cercana a la hora actual
-        hourly_temps = data['prediccion']['temperatura']['datos']
-        current_temp = next((t['valor'] for t in hourly_temps if int(t['hora']) == current_time), 'N/A')
-    else:
-        current_temp = 'N/A'
-    
-    return current_temp
-
-# Función para obtener la predicción diaria de AEMET (para lluvia y viento)
-def get_daily_weather(nearest_municipio):
+# Función para obtener el clima actual desde AEMET.
+def get_weather(nearest_municipio):
     municipio_id = nearest_municipio['id']
     url = f"https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/diaria/{municipio_id}?api_key={aemet_api_key}"
     response = requests.get(url)
     data = response.json()
-
-    if 'prediccion' in data:
-        prediccion = data['prediccion']
-        prob_lluvia = prediccion['prob_precipitacion'][0]['value'] if 'prob_precipitacion' in prediccion else 'N/A'
-        velocidad_viento = prediccion['viento'][0]['velocidad'] if 'viento' in prediccion else 'N/A'
-    else:
-        prob_lluvia = 'N/A'
-        velocidad_viento = 'N/A'
-
-    return prob_lluvia, velocidad_viento
+    
+    # Asumir buen clima si no hay lluvias o mal tiempo (simplificación)
+    weather_state = data['state'] if 'state' in data else 'good'
+    return weather_state
 
 # Función para sugerir una tarea según el clima
 def suggest_task(is_good_weather, available_time):
@@ -78,31 +54,64 @@ def suggest_task(is_good_weather, available_time):
     suggested_task = filtered_activities.sample(n=1).iloc[0]
     return suggested_task
 
+# Función para sugerir una tarea similar (misma categoría, diferente subcategoría)
+def suggest_similar_task(category, subcategory, available_time, is_good_weather):
+    if is_good_weather:
+        all_activities = pd.concat([indoor_activities, outdoor_activities])
+    else:
+        all_activities = indoor_activities
+    
+    # Filtrar tareas de la misma categoría, pero subcategoría diferente
+    filtered_activities = all_activities[
+        (all_activities['Categoria_Principal'] == category) &
+        (all_activities['Subcategoria'] != subcategory) &
+        (all_activities['Tiempo_Estimado_Minutos'] <= available_time)
+    ]
+    
+    if not filtered_activities.empty:
+        return filtered_activities.sample(n=1).iloc[0]
+    else:
+        return None
+
+# Función para sugerir una tarea diferente (otra categoría)
+def suggest_different_task(category, available_time, is_good_weather):
+    if is_good_weather:
+        all_activities = pd.concat([indoor_activities, outdoor_activities])
+    else:
+        all_activities = indoor_activities
+    
+    # Filtrar tareas de una categoría diferente
+    filtered_activities = all_activities[
+        (all_activities['Categoria_Principal'] != category) &
+        (all_activities['Tiempo_Estimado_Minutos'] <= available_time)
+    ]
+    
+    if not filtered_activities.empty:
+        return filtered_activities.sample(n=1).iloc[0]
+    else:
+        return None
+
+# Función para buscar en Google Places
+def find_place(task):
+    google_places = GooglePlaces(google_api_key)
+    query_result = google_places.nearby_search(
+        location=get_user_location(), keyword=task, radius=5000)
+    return query_result.places
+
 # Streamlit app
 def main():
     st.title("Bored no more: proposal for doing things")
 
-    # Obtener la geolocalización y el clima
-    user_lat, user_lon, user_address = get_user_location()
-    nearest_municipio = get_nearest_municipio(user_lat, user_lon)
-    
-    # Obtener la temperatura actual (predicción horaria) y las demás variables (predicción diaria)
-    temperatura_actual = get_hourly_temperature(nearest_municipio)
-    prob_lluvia, velocidad_viento = get_daily_weather(nearest_municipio)
-
-    # Mostrar la leyenda con la ubicación, clima y detalles meteorológicos
-    st.subheader("Tu ubicación y clima actual")
-    st.write(f"Ubicación: {user_address}")
-    st.write(f"Hora actual: {datetime.datetime.now().strftime('%H:%M')}")
-    st.write(f"Temperatura actual: {temperatura_actual} °C")
-    st.write(f"Probabilidad de lluvia: {prob_lluvia}%")
-    st.write(f"Velocidad del viento: {velocidad_viento} km/h")
-
     # Preguntar cuánto tiempo libre tiene el usuario
     available_time = st.slider("¿Cuánto tiempo libre tienes? (en minutos)", 10, 240, 60)
 
+    # Obtener la geolocalización y el clima
+    user_lat, user_lon = get_user_location()
+    nearest_municipio = get_nearest_municipio(user_lat, user_lon)
+    weather = get_weather(nearest_municipio)
+
     # Decidir si el clima es bueno o malo
-    is_good_weather = int(prob_lluvia) < 50  # Buen clima si la probabilidad de lluvia es menor al 50%
+    is_good_weather = weather == 'good'
 
     # Sugerir una tarea
     suggested_task = suggest_task(is_good_weather, available_time)
@@ -126,9 +135,28 @@ def main():
     
     if col2.button('No me apetece mucho'):
         st.write("Te sugerimos otra tarea similar...")
+        similar_task = suggest_similar_task(
+            category=suggested_task['Categoria_Principal'],
+            subcategory=suggested_task['Subcategoria'],
+            available_time=available_time,
+            is_good_weather=is_good_weather
+        )
+        if similar_task is not None:
+            st.write(f"Te sugerimos: {similar_task['Nombre_Tarea']}")
+        else:
+            st.write("Lo siento, no encontramos tareas similares.")
 
     if col3.button('No me apetece nada hacer esto'):
         st.write("Te sugerimos una tarea completamente diferente...")
+        different_task = suggest_different_task(
+            category=suggested_task['Categoria_Principal'],
+            available_time=available_time,
+            is_good_weather=is_good_weather
+        )
+        if different_task is not None:
+            st.write(f"Te sugerimos: {different_task['Nombre_Tarea']}")
+        else:
+            st.write("Lo siento, no encontramos tareas de otras categorías.")
 
 if __name__ == '__main__':
     main()
