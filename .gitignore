@@ -1,2 +1,4 @@
 .DS_store
 .env
+__pycache__/geolocation.cpython-312.pyc
+prueba.ipynb

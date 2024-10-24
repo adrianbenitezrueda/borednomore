@@ -29,10 +29,10 @@ def obtener_prediccion(codigo_municipio, tipo_prediccion):
             st.error(f"Error: no se encontró la clave 'datos' en la respuesta.")
     else:
         st.error(f"Error en la solicitud a AEMET: {response.status_code}")
-    
+        
     return None
 
-# Función para obtener el bloque de tiempo actual
+ # Función para obtener el bloque de tiempo actual
 def obtener_bloque_tiempo(hora_actual):
     bloques = [(0, 6), (6, 12), (12, 18), (18, 24)]
     for inicio, fin in bloques:
@@ -70,9 +70,10 @@ def obtener_estado_cielo_por_bloque(prediccion_hoy, bloque):
     return 'Información no disponible'
 
 def obtener_viento_por_bloque(prediccion_hoy, bloque):
-    for viento in prediccion_hoy['viento']:
-        if viento['periodo'] == bloque:
-            return viento.get('velocidad', 'Información no disponible')
+    if 'viento' in prediccion_hoy:
+        for viento in prediccion_hoy['viento']:
+            if viento['periodo'] == bloque:
+                return viento.get('velocidad', 'Información no disponible')
     return 'Información no disponible'
 
 def obtener_lluvia_por_bloque(prediccion_hoy, bloque):
@@ -91,20 +92,19 @@ def procesar_datos_clima(codigo_municipio):
 
     # Procesar datos diarios
     if clima_diario:
-        prediccion_hoy = clima_diario[0]['prediccion']['dia'][0]
-        max_temp, min_temp = obtener_temperaturas(prediccion_hoy)
-        estado_cielo = obtener_estado_cielo_mas_frecuente(prediccion_hoy)
+        prediccion_diaria = clima_diario[0]['prediccion']['dia'][0]
+        max_temp, min_temp = obtener_temperaturas(prediccion_diaria)
+        estado_cielo = obtener_estado_cielo_mas_frecuente(prediccion_diaria)
 
     # Procesar datos horarios
     if clima_horario:
-        prediccion_hoy = clima_horario[0]['prediccion']['dia'][0]
+        prediccion_horaria = clima_horario[0]['prediccion']['dia'][0]
         hora_actual = datetime.now().hour
         bloque = obtener_bloque_tiempo(hora_actual)
-        
-        temp_actual = obtener_temperatura_actual(prediccion_hoy)
-        estado_cielo_actual = obtener_estado_cielo_por_bloque(prediccion_hoy, bloque)
-        viento_actual = obtener_viento_por_bloque(prediccion_hoy, bloque)
-        lluvia_actual = obtener_lluvia_por_bloque(prediccion_hoy, bloque)
+            
+        temp_actual = obtener_temperatura_actual(prediccion_horaria)
+        viento_actual = obtener_viento_por_bloque(prediccion_diaria, bloque)
+        lluvia_actual = obtener_lluvia_por_bloque(prediccion_diaria, bloque)
 
     # Retornar los resultados como un diccionario
     return {
@@ -112,8 +112,18 @@ def procesar_datos_clima(codigo_municipio):
         "min_temp": min_temp,
         "estado_cielo": estado_cielo,
         "temp_actual": temp_actual,
-        "estado_cielo_actual": estado_cielo_actual,
         "viento_actual": viento_actual,
         "lluvia_actual": lluvia_actual
     }
 
+
+# Obtener los datos del clima
+datos_clima = procesar_datos_clima(codigo_municipio)
+
+# Usar los datos en la app principal
+st.write(f"Temperatura máxima: {datos_clima['max_temp']}°C")
+st.write(f"Temperatura mínima: {datos_clima['min_temp']}°C")
+st.write(f"Estado del cielo más frecuente: {datos_clima['estado_cielo']}")
+st.write(f"Temperatura actual: {datos_clima['temp_actual']}°C")
+st.write(f"Velocidad del viento actual: {datos_clima['viento_actual']} km/h")
+st.write(f"Probabilidad de lluvia actual: {datos_clima['lluvia_actual']}%")
