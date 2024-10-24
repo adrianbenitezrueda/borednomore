@@ -25,12 +25,6 @@ indoor_activities = pd.read_csv('data/cleaned/home_activities.csv')
 outdoor_activities = pd.read_csv('data/cleaned/outdoor_activities.csv')
 municipios_aemet = pd.read_csv('data/raw/municipios_aemet.csv')
 
-# Función para obtener la ubicación del usuario
-def get_user_location():
-    geolocator = Nominatim(user_agent="geoapiExercises")
-    location = geolocator.geocode("Cádiz, Spain")  # Puedes adaptar esto para la ubicación real del usuario
-    return location.latitude, location.longitude
-
 # Función para buscar el municipio más cercano según la ubicación
 def get_nearest_municipio(lat, lon):
     municipios_aemet['distancia'] = ((municipios_aemet['latitud_dec'] - lat)**2 + 
