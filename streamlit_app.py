@@ -25,7 +25,7 @@ def get_user_location():
 # Cargar los datasets de actividades y municipios
 indoor_activities = pd.read_csv('data/cleaned/home_activities.csv')
 outdoor_activities = pd.read_csv('data/cleaned/outdoor_activities.csv')
-municipios_aemet = pd.read_csv('data/municipios_aemet.csv')
+municipios_aemet = pd.read_csv('data/raw/municipios_aemet.csv')
 
 # Función para obtener la ubicación del usuario
 def get_user_location():
