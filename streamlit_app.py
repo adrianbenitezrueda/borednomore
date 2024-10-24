@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 import datetime
 import logging
-from geolocation import get_user_location
-from weather import procesar_datos_clima
+from geolocation import get_user_location  # Importa la función para obtener la ubicación
+from weather import procesar_datos_clima   # Importa la función para procesar datos del clima
 
 # Configurar logging
 logging.basicConfig(level=logging.INFO)
@@ -19,6 +19,7 @@ st.set_page_config(
 # Cargar los datasets de actividades
 @st.cache_data
 def load_activities():
+    """Carga los datasets de actividades desde los archivos CSV"""
     try:
         indoor = pd.read_csv('data/cleaned/home_activities.csv')
         outdoor = pd.read_csv('data/cleaned/outdoor_activities.csv')
@@ -30,6 +31,7 @@ def load_activities():
 def suggest_task(is_good_weather, available_time, indoor_activities, outdoor_activities, exclude_activities=None):
     """Sugiere una tarea según el clima y tiempo disponible"""
     try:
+        # Si el clima es bueno (lluvia < 50%), incluir actividades al aire libre
         if is_good_weather:
             all_activities = pd.concat([indoor_activities, outdoor_activities])
         else:
@@ -39,6 +41,7 @@ def suggest_task(is_good_weather, available_time, indoor_activities, outdoor_act
         if exclude_activities:
             all_activities = all_activities[~all_activities['Nombre_Tarea'].isin(exclude_activities)]
             
+        # Filtrar por tiempo disponible
         filtered_activities = all_activities[all_activities['Tiempo_Estimado_Minutos'] <= available_time]
         if filtered_activities.empty:
             return None
@@ -46,26 +49,6 @@ def suggest_task(is_good_weather, available_time, indoor_activities, outdoor_act
     except Exception as e:
         logger.error(f"Error al sugerir tarea: {str(e)}")
         return None
-
-def display_task_recommendations(task, weather_data):
-    """Muestra recomendaciones personalizadas para la tarea"""
-    st.subheader("📝 Recomendaciones para realizar la actividad")
-    
-    # Recomendaciones basadas en el clima
-    if weather_data['lluvia_actual'] > 30:
-        st.warning("☔ Hay probabilidad de lluvia. Considera llevar paraguas o realizar la actividad en interior.")
-    
-    if weather_data['temp_actual'] > 30:
-        st.warning("🌡️ Hace bastante calor. Recuerda mantenerte hidratado.")
-    
-    # Recomendaciones específicas según el tipo de tarea
-    if 'Categoria' in task:
-        if task['Categoria'] == 'Deporte':
-            st.info("🏃‍♂️ Recuerda hacer calentamiento antes de empezar.")
-        elif task['Categoria'] == 'Cocina':
-            st.info("👩‍🍳 Revisa que tienes todos los ingredientes necesarios.")
-        elif task['Categoria'] == 'Manualidades':
-            st.info("🎨 Prepara un espacio de trabajo adecuado y bien iluminado.")
 
 def main():
     try:
@@ -77,7 +60,7 @@ def main():
             st.error("Error al cargar la base de datos de actividades")
             return
 
-        # Obtener ubicación
+        # Obtener ubicación usando el servicio de geolocation.py
         with st.spinner("Obteniendo tu ubicación..."):
             nombre_municipio, codigo_municipio = get_user_location()
             
@@ -86,11 +69,14 @@ def main():
             st.info("Por favor, asegúrate de que tu navegador permite el acceso a la ubicación")
             return
 
-        # Obtener clima
+        # Obtener datos del clima usando el servicio de weather.py
         with st.spinner("Consultando el clima..."):
             datos_clima = procesar_datos_clima(codigo_municipio)
+            if not datos_clima:
+                st.error("No se pudieron obtener los datos del clima")
+                return
 
-        # Mostrar información
+        # Mostrar información del clima y ubicación
         col1, col2 = st.columns([2, 1])
         
         with col1:
@@ -98,17 +84,17 @@ def main():
             st.write(f"📌 Ubicación: {nombre_municipio}")
             st.write(f"🕒 Hora actual: {datetime.datetime.now().strftime('%H:%M')}")
             
-            if datos_clima["temp_actual"]:
+            if datos_clima.get("temp_actual"):
                 st.write(f"🌡️ Temperatura actual: {datos_clima['temp_actual']}°C")
-            if datos_clima["max_temp"]:
+            if datos_clima.get("max_temp"):
                 st.write(f"📈 Máxima: {datos_clima['max_temp']}°C")
-            if datos_clima["min_temp"]:
+            if datos_clima.get("min_temp"):
                 st.write(f"📉 Mínima: {datos_clima['min_temp']}°C")
-            if datos_clima["estado_cielo"]:
+            if datos_clima.get("estado_cielo"):
                 st.write(f"☁️ Cielo: {datos_clima['estado_cielo']}")
-            if datos_clima["viento_actual"]:
+            if datos_clima.get("viento_actual"):
                 st.write(f"💨 Viento: {datos_clima['viento_actual']} km/h")
-            if datos_clima["lluvia_actual"]:
+            if datos_clima.get("lluvia_actual"):
                 st.write(f"🌧️ Prob. lluvia: {datos_clima['lluvia_actual']}%")
 
         with col2:
@@ -122,8 +108,8 @@ def main():
                 help="Arrastra el slider para indicar los minutos disponibles"
             )
 
-        # Decidir si el clima es bueno
-        is_good_weather = datos_clima['lluvia_actual'] < 50
+        # Decidir si el clima es bueno basado en la probabilidad de lluvia
+        is_good_weather = datos_clima.get('lluvia_actual', 100) < 50  # Por defecto considera mal tiempo si no hay dato
 
         # Mantener un historial de tareas sugeridas en la sesión
         if 'suggested_tasks_history' not in st.session_state:
@@ -152,11 +138,10 @@ def main():
         col1, col2, col3 = st.columns(3)
         
         if col1.button('✅ ¡Voy a hacerlo!'):
-            display_task_recommendations(st.session_state.current_task, datos_clima)
+            st.success("¡Excelente elección! ¡Disfruta de la actividad!")
             st.balloons()
             
         if col2.button('🤔 No me apetece mucho'):
-            # Sugerir tarea similar (misma categoría)
             st.session_state.suggested_tasks_history.append(st.session_state.current_task['Nombre_Tarea'])
             nueva_tarea = suggest_task(
                 is_good_weather, 
@@ -172,7 +157,6 @@ def main():
                 st.warning("No hay más sugerencias similares disponibles")
                 
         if col3.button('❌ No me apetece nada hacer esto'):
-            # Sugerir tarea completamente diferente
             st.session_state.suggested_tasks_history.append(st.session_state.current_task['Nombre_Tarea'])
             nueva_tarea = suggest_task(
                 is_good_weather, 
