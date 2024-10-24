@@ -213,7 +213,7 @@ def main():
                 st.session_state.current_task = similar_task
                 st.session_state.excluded_tasks.add(similar_task['Nombre_Tarea'])
                 with task_container:
-                    st.markdown("### 💡 Sugerencia de actividad")
+                    st.markdown("### 💡 Nueva sugerencia de actividad")
                     display_task_card(similar_task)
             else:
                 st.warning("No encontramos actividades similares para el tiempo disponible.")
@@ -229,7 +229,7 @@ def main():
                 st.session_state.current_task = different_task
                 st.session_state.excluded_tasks.add(different_task['Nombre_Tarea'])
                 with task_container:
-                    st.markdown("### 💡 Sugerencia de actividad")
+                    st.markdown("### 💡 Nueva sugerencia de actividad")
                     display_task_card(different_task)
             else:
                 st.warning("No encontramos actividades diferentes para el tiempo disponible.")
