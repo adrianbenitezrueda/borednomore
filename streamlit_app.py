@@ -32,7 +32,7 @@ def get_nearest_municipio(lat, lon):
     nearest_municipio = municipios_aemet.loc[municipios_aemet['distancia'].idxmin()]
     return nearest_municipio
 
-# Función para obtener el clima actual desde AEMET
+# Función para obtener el clima actual desde AEMET.
 def get_weather(nearest_municipio):
     municipio_id = nearest_municipio['id']
     url = f"https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/diaria/{municipio_id}?api_key={aemet_api_key}"
