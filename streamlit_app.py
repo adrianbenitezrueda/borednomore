@@ -3,10 +3,12 @@ import pandas as pd
 import requests
 import random
 from googleplaces import GooglePlaces  # Para Google Places
+from giphy_client import DefaultApi as GiphyClient  # Para Giphy
 
 # Cargar API keys desde streamlit secrets
 google_api_key = st.secrets["GOOGLE_API_KEY"]
 aemet_api_key = st.secrets["AEMET_API_KEY"]
+giphy_api_key = st.secrets["GIPHY_API_KEY"]
 
 # Función para obtener la ubicación del usuario usando Google Geocoding API
 def get_user_location():
@@ -104,6 +106,15 @@ def find_place(task):
         location=get_user_location(), keyword=task, radius=5000)
     return query_result.places
 
+# Función para obtener un GIF relacionado con la tarea
+def get_giphy(task):
+    api_instance = GiphyClient(api_key=giphy_api_key)
+    response = api_instance.gifs_search_get(giphy_api_key, task, limit=1)
+    if response.data:
+        gif_url = response.data[0].url
+        return gif_url
+    return None
+
 # Streamlit app
 def main():
     st.title("Bored no more: proposal for doing things")
@@ -138,6 +149,11 @@ def main():
         places = find_place(suggested_task['Nombre_Tarea'])
         for place in places:
             st.write(f"Nombre: {place.name}, Dirección: {place.vicinity}")
+
+        # Obtener y mostrar GIF gracioso
+        gif_url = get_giphy(suggested_task['Nombre_Tarea'])
+        if gif_url:
+            st.image(gif_url, use_column_width=True)
     
     if col2.button('No me apetece mucho'):
         st.write("Te sugerimos otra tarea similar...")
