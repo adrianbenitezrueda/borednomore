@@ -1,0 +1,485 @@
+ID,Nombre_Tarea,Categoria_Principal,Subcategoria,Indoor_Outdoor,Temp_Min,Temp_Max,Tiempo_Estimado_Minutos,Requiere_Ubicacion,API_Categoria,Descripcion
+1,Drama contemporáneo,Cultura,Teatro,Indoor,18,28,60,True,place_category,Explora una emocionante Drama contemporáneo dentro de la categoría de Cultura
+2,Partido amistoso de baloncesto,Deporte,Deportes de equipo,Outdoor,15,30,90,False,,Explora una emocionante Partido amistoso de baloncesto dentro de la categoría de Deporte
+3,Entrenamiento HIIT de 75 minutos,Deporte,Fitness,Outdoor,15,30,60,False,,Explora una emocionante Entrenamiento HIIT de 75 minutos dentro de la categoría de Deporte
+4,Taller interactivo en museo local,Cultura,Museos,Indoor,18,28,60,True,place_category,Explora una emocionante Taller interactivo en museo local dentro de la categoría de Cultura
+5,Práctica de técnicas de balonmano,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Práctica de técnicas de balonmano dentro de la categoría de Deporte
+6,Práctica de técnicas de tenis,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Práctica de técnicas de tenis dentro de la categoría de Deporte
+7,Recorrido temático por galería de arte,Cultura,Museos,Indoor,18,28,120,True,place_category,Explora una emocionante Recorrido temático por galería de arte dentro de la categoría de Cultura
+8,Masterclass de ramen,Gastronomía,Cocina internacional,Indoor,18,28,240,True,,Explora una emocionante Masterclass de ramen dentro de la categoría de Gastronomía
+9,Improvisación teatral,Cultura,Teatro,Indoor,18,28,90,True,place_category,Explora una emocionante Improvisación teatral dentro de la categoría de Cultura
+10,Práctica de técnicas de baloncesto,Deporte,Deportes de equipo,Outdoor,15,30,45,False,,Explora una emocionante Práctica de técnicas de baloncesto dentro de la categoría de Deporte
+11,Clase de aeróbics experimental,Deporte,Fitness,Outdoor,15,30,60,False,,Explora una emocionante Clase de aeróbics experimental dentro de la categoría de Deporte
+12,Clase de sushi tradicional,Gastronomía,Cocina internacional,Indoor,18,28,60,True,,Explora una emocionante Clase de sushi tradicional dentro de la categoría de Gastronomía
+13,TRX profesional,Deporte,Fitness,Outdoor,15,30,240,False,,Explora una emocionante TRX profesional dentro de la categoría de Deporte
+14,Comedia en vivo,Cultura,Teatro,Indoor,18,28,120,True,place_category,Explora una emocionante Comedia en vivo dentro de la categoría de Cultura
+15,Clase de iniciación a ping-pong,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Clase de iniciación a ping-pong dentro de la categoría de Deporte
+16,Visita al museo de naturaleza,Cultura,Museos,Indoor,18,28,30,True,place_category,Explora una emocionante Visita al museo de naturaleza dentro de la categoría de Cultura
+17,Entrenamiento de pádel para medio,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Entrenamiento de pádel para medio dentro de la categoría de Deporte
+18,Práctica de técnicas de voleibol,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Práctica de técnicas de voleibol dentro de la categoría de Deporte
+19,Exhibición especial de ciencias naturales,Cultura,Museos,Indoor,18,28,60,True,place_category,Explora una emocionante Exhibición especial de ciencias naturales dentro de la categoría de Cultura
+20,Performance artística,Cultura,Teatro,Indoor,18,28,120,True,place_category,Explora una emocionante Performance artística dentro de la categoría de Cultura
+21,Cena temática japonesa,Gastronomía,Cocina internacional,Indoor,18,28,30,True,,Explora una emocionante Cena temática japonesa dentro de la categoría de Gastronomía
+22,Clase de empanadas tradicional,Gastronomía,Cocina internacional,Indoor,18,28,60,True,,Explora una emocionante Clase de empanadas tradicional dentro de la categoría de Gastronomía
+23,Masterclass de empanadas,Gastronomía,Cocina internacional,Indoor,18,28,120,True,,Explora una emocionante Masterclass de empanadas dentro de la categoría de Gastronomía
+24,Sesión táctica de tenis,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Sesión táctica de tenis dentro de la categoría de Deporte
+25,Visita al museo de ciencia,Cultura,Museos,Indoor,18,28,180,True,place_category,Explora una emocionante Visita al museo de ciencia dentro de la categoría de Cultura
+26,TRX avanzado,Deporte,Fitness,Outdoor,15,30,30,False,,Explora una emocionante TRX avanzado dentro de la categoría de Deporte
+27,Exhibición especial de arte moderno,Cultura,Museos,Indoor,18,28,90,True,place_category,Explora una emocionante Exhibición especial de arte moderno dentro de la categoría de Cultura
+28,Visita virtual al museo Cultural,Cultura,Museos,Indoor,18,28,120,True,place_category,Explora una emocionante Visita virtual al museo Cultural dentro de la categoría de Cultura
+29,Masterclass de ceviche,Gastronomía,Cocina internacional,Indoor,18,28,180,True,,Explora una emocionante Masterclass de ceviche dentro de la categoría de Gastronomía
+30,Teatro experimental urbano,Cultura,Teatro,Indoor,18,28,90,True,place_category,Explora una emocionante Teatro experimental urbano dentro de la categoría de Cultura
+31,Entrenamiento funcional maestro,Deporte,Fitness,Outdoor,15,30,60,False,,Explora una emocionante Entrenamiento funcional maestro dentro de la categoría de Deporte
+32,Teatro experimental experimental,Cultura,Teatro,Indoor,18,28,60,True,place_category,Explora una emocionante Teatro experimental experimental dentro de la categoría de Cultura
+33,Partido de fútbol en pista al aire libre,Deporte,Deportes de equipo,Outdoor,15,30,45,False,,Explora una emocionante Partido de fútbol en pista al aire libre dentro de la categoría de Deporte
+34,Obra de teatro romántico,Cultura,Teatro,Indoor,18,28,180,True,place_category,Explora una emocionante Obra de teatro romántico dentro de la categoría de Cultura
+35,Entrenamiento de balonmano para intermedio,Deporte,Deportes de equipo,Outdoor,15,30,45,False,,Explora una emocionante Entrenamiento de balonmano para intermedio dentro de la categoría de Deporte
+36,Torneo informal de hockey,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Torneo informal de hockey dentro de la categoría de Deporte
+37,Mini torneo de hockey,Deporte,Deportes de equipo,Outdoor,15,30,90,False,,Explora una emocionante Mini torneo de hockey dentro de la categoría de Deporte
+38,Recorrido temático por museo de la ciencia,Cultura,Museos,Indoor,18,28,45,True,place_category,Explora una emocionante Recorrido temático por museo de la ciencia dentro de la categoría de Cultura
+39,Sesión de cardio media,Deporte,Fitness,Outdoor,15,30,120,False,,Explora una emocionante Sesión de cardio media dentro de la categoría de Deporte
+40,Experiencia gastronómica tailandesa,Gastronomía,Cocina internacional,Indoor,18,28,180,True,,Explora una emocionante Experiencia gastronómica tailandesa dentro de la categoría de Gastronomía
+41,Torneo informal de balonmano,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Torneo informal de balonmano dentro de la categoría de Deporte
+42,Sesión táctica de pádel,Deporte,Deportes de equipo,Outdoor,15,30,90,False,,Explora una emocionante Sesión táctica de pádel dentro de la categoría de Deporte
+43,Clase de iniciación a rugby,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Clase de iniciación a rugby dentro de la categoría de Deporte
+44,Juego en equipo de voleibol,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Juego en equipo de voleibol dentro de la categoría de Deporte
+45,Monólogo de psicológica,Cultura,Teatro,Indoor,18,28,240,True,place_category,Explora una emocionante Monólogo de psicológica dentro de la categoría de Cultura
+46,Obra de teatro drama,Cultura,Teatro,Indoor,18,28,120,True,place_category,Explora una emocionante Obra de teatro drama dentro de la categoría de Cultura
+47,Tour guiado por centro cultural,Cultura,Museos,Indoor,18,28,180,True,place_category,Explora una emocionante Tour guiado por centro cultural dentro de la categoría de Cultura
+48,Mini torneo de fútbol,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Mini torneo de fútbol dentro de la categoría de Deporte
+49,Partido de bádminton en playa,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Partido de bádminton en playa dentro de la categoría de Deporte
+50,Teatro experimental fusión,Cultura,Teatro,Indoor,18,28,180,True,place_category,Explora una emocionante Teatro experimental fusión dentro de la categoría de Cultura
+51,Entrenamiento funcional novato,Deporte,Fitness,Outdoor,15,30,30,False,,Explora una emocionante Entrenamiento funcional novato dentro de la categoría de Deporte
+52,TRX experto,Deporte,Fitness,Outdoor,15,30,60,False,,Explora una emocionante TRX experto dentro de la categoría de Deporte
+53,Curso de cocina minimalista,Gastronomía,Cocina internacional,Indoor,18,28,240,True,,Explora una emocionante Curso de cocina minimalista dentro de la categoría de Gastronomía
+54,Partido de ping-pong en cancha municipal,Deporte,Deportes de equipo,Outdoor,15,30,45,False,,Explora una emocionante Partido de ping-pong en cancha municipal dentro de la categoría de Deporte
+55,TRX intermedio,Deporte,Fitness,Outdoor,15,30,90,False,,Explora una emocionante TRX intermedio dentro de la categoría de Deporte
+56,Recorrido temático por museo interactivo,Cultura,Museos,Indoor,18,28,120,True,place_category,Explora una emocionante Recorrido temático por museo interactivo dentro de la categoría de Cultura
+57,Entrenamiento funcional intermedio,Deporte,Fitness,Outdoor,15,30,90,False,,Explora una emocionante Entrenamiento funcional intermedio dentro de la categoría de Deporte
+58,Taller interactivo en museo interactivo,Cultura,Museos,Indoor,18,28,90,True,place_category,Explora una emocionante Taller interactivo en museo interactivo dentro de la categoría de Cultura
+59,Masterclass de pasta,Gastronomía,Cocina internacional,Indoor,18,28,30,True,,Explora una emocionante Masterclass de pasta dentro de la categoría de Gastronomía
+60,Entrenamiento de bádminton para maestro,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Entrenamiento de bádminton para maestro dentro de la categoría de Deporte
+61,Tour guiado por museo interactivo,Cultura,Museos,Indoor,18,28,90,True,place_category,Explora una emocionante Tour guiado por museo interactivo dentro de la categoría de Cultura
+62,Exhibición especial de ingeniería,Cultura,Museos,Indoor,18,28,60,True,place_category,Explora una emocionante Exhibición especial de ingeniería dentro de la categoría de Cultura
+63,Monólogo de política,Cultura,Teatro,Indoor,18,28,240,True,place_category,Explora una emocionante Monólogo de política dentro de la categoría de Cultura
+64,Entrenamiento con kettlebells,Deporte,Fitness,Outdoor,15,30,240,False,,Explora una emocionante Entrenamiento con kettlebells dentro de la categoría de Deporte
+65,Clase de iniciación a voleibol,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Clase de iniciación a voleibol dentro de la categoría de Deporte
+66,Teatro infantil arte moderno,Cultura,Teatro,Indoor,18,28,90,True,place_category,Explora una emocionante Teatro infantil arte moderno dentro de la categoría de Cultura
+67,Exposición de artista conceptual,Cultura,Museos,Indoor,18,28,90,True,place_category,Explora una emocionante Exposición de artista conceptual dentro de la categoría de Cultura
+68,Partido de balonmano en centro deportivo,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Partido de balonmano en centro deportivo dentro de la categoría de Deporte
+69,Teatro infantil ciencias naturales,Cultura,Teatro,Indoor,18,28,90,True,place_category,Explora una emocionante Teatro infantil ciencias naturales dentro de la categoría de Cultura
+70,Práctica de fútbol recreativo,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Práctica de fútbol recreativo dentro de la categoría de Deporte
+71,Práctica de técnicas de fútbol,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Práctica de técnicas de fútbol dentro de la categoría de Deporte
+72,Workshop de innovadora culinaria,Gastronomía,Cocina internacional,Indoor,18,28,90,True,,Explora una emocionante Workshop de innovadora culinaria dentro de la categoría de Gastronomía
+73,Recorrido temático por museo del cine,Cultura,Museos,Indoor,18,28,240,True,place_category,Explora una emocionante Recorrido temático por museo del cine dentro de la categoría de Cultura
+74,Curso de cocina experimental,Gastronomía,Cocina internacional,Indoor,18,28,120,True,,Explora una emocionante Curso de cocina experimental dentro de la categoría de Gastronomía
+75,Tour privado por centro cultural,Cultura,Museos,Indoor,18,28,60,True,place_category,Explora una emocionante Tour privado por centro cultural dentro de la categoría de Cultura
+76,Práctica de técnicas de pádel,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Práctica de técnicas de pádel dentro de la categoría de Deporte
+77,Preparación de empanadas típico,Gastronomía,Cocina internacional,Indoor,18,28,120,True,,Explora una emocionante Preparación de empanadas típico dentro de la categoría de Gastronomía
+78,Entrenamiento funcional principiante,Deporte,Fitness,Outdoor,15,30,30,False,,Explora una emocionante Entrenamiento funcional principiante dentro de la categoría de Deporte
+79,Tour privado por museo nacional,Cultura,Museos,Indoor,18,28,45,True,place_category,Explora una emocionante Tour privado por museo nacional dentro de la categoría de Cultura
+80,Juego en equipo de balonmano,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Juego en equipo de balonmano dentro de la categoría de Deporte
+81,Práctica de tenis recreativo,Deporte,Deportes de equipo,Outdoor,15,30,90,False,,Explora una emocionante Práctica de tenis recreativo dentro de la categoría de Deporte
+82,Clase de iniciación a pádel,Deporte,Deportes de equipo,Outdoor,15,30,90,False,,Explora una emocionante Clase de iniciación a pádel dentro de la categoría de Deporte
+83,Microteatro histórica,Cultura,Teatro,Indoor,18,28,60,True,place_category,Explora una emocionante Microteatro histórica dentro de la categoría de Cultura
+84,Degustación de nórdica,Gastronomía,Cocina internacional,Indoor,18,28,90,True,,Explora una emocionante Degustación de nórdica dentro de la categoría de Gastronomía
+85,Práctica de rugby recreativo,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Práctica de rugby recreativo dentro de la categoría de Deporte
+86,Sesión táctica de bádminton,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Sesión táctica de bádminton dentro de la categoría de Deporte
+87,Sesión de cardio baja,Deporte,Fitness,Outdoor,15,30,120,False,,Explora una emocionante Sesión de cardio baja dentro de la categoría de Deporte
+88,Visita virtual al museo Nacional,Cultura,Museos,Indoor,18,28,45,True,place_category,Explora una emocionante Visita virtual al museo Nacional dentro de la categoría de Cultura
+89,Rutina de pesas para flexibilidad,Deporte,Fitness,Outdoor,15,30,45,False,,Explora una emocionante Rutina de pesas para flexibilidad dentro de la categoría de Deporte
+90,Degustación de asiática,Gastronomía,Cocina internacional,Indoor,18,28,30,True,,Explora una emocionante Degustación de asiática dentro de la categoría de Gastronomía
+91,Taller de cocina brasileña,Gastronomía,Cocina internacional,Indoor,18,28,30,True,,Explora una emocionante Taller de cocina brasileña dentro de la categoría de Gastronomía
+92,Torneo informal de rugby,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Torneo informal de rugby dentro de la categoría de Deporte
+93,Rutina de pesas para principiantes,Deporte,Fitness,Outdoor,15,30,30,False,,Explora una emocionante Rutina de pesas para principiantes dentro de la categoría de Deporte
+94,Microteatro moral,Cultura,Teatro,Indoor,18,28,60,True,place_category,Explora una emocionante Microteatro moral dentro de la categoría de Cultura
+95,Rutina de pesas para fuerza,Deporte,Fitness,Outdoor,15,30,30,False,,Explora una emocionante Rutina de pesas para fuerza dentro de la categoría de Deporte
+96,Rutina de pesas para resistencia,Deporte,Fitness,Outdoor,15,30,90,False,,Explora una emocionante Rutina de pesas para resistencia dentro de la categoría de Deporte
+97,Entrenamiento funcional medio,Deporte,Fitness,Outdoor,15,30,240,False,,Explora una emocionante Entrenamiento funcional medio dentro de la categoría de Deporte
+98,Obra de teatro musical,Cultura,Teatro,Indoor,18,28,90,True,place_category,Explora una emocionante Obra de teatro musical dentro de la categoría de Cultura
+99,Microteatro cultural,Cultura,Teatro,Indoor,18,28,180,True,place_category,Explora una emocionante Microteatro cultural dentro de la categoría de Cultura
+100,Exposición temporal de fotografía antigua,Cultura,Museos,Indoor,18,28,90,True,place_category,Explora una emocionante Exposición temporal de fotografía antigua dentro de la categoría de Cultura
+101,Taller de cocina francesa,Gastronomía,Cocina internacional,Indoor,18,28,180,True,,Explora una emocionante Taller de cocina francesa dentro de la categoría de Gastronomía
+102,Demostración de cocina italiana,Gastronomía,Cocina internacional,Indoor,18,28,120,True,,Explora una emocionante Demostración de cocina italiana dentro de la categoría de Gastronomía
+103,Sesión táctica de voleibol,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Sesión táctica de voleibol dentro de la categoría de Deporte
+104,Mini torneo de balonmano,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Mini torneo de balonmano dentro de la categoría de Deporte
+105,Degustación de mediterránea,Gastronomía,Cocina internacional,Indoor,18,28,45,True,,Explora una emocionante Degustación de mediterránea dentro de la categoría de Gastronomía
+106,Exhibición especial de innovación,Cultura,Museos,Indoor,18,28,180,True,place_category,Explora una emocionante Exhibición especial de innovación dentro de la categoría de Cultura
+107,Tour privado por galería de arte,Cultura,Museos,Indoor,18,28,120,True,place_category,Explora una emocionante Tour privado por galería de arte dentro de la categoría de Cultura
+108,Musical Chicago,Cultura,Teatro,Indoor,18,28,120,True,place_category,Explora una emocionante Musical Chicago dentro de la categoría de Cultura
+109,Monólogo de cultural,Cultura,Teatro,Indoor,18,28,180,True,place_category,Explora una emocionante Monólogo de cultural dentro de la categoría de Cultura
+110,Juego en equipo de tenis,Deporte,Deportes de equipo,Outdoor,15,30,120,False,,Explora una emocionante Juego en equipo de tenis dentro de la categoría de Deporte
+111,Monólogo de contemporánea,Cultura,Teatro,Indoor,18,28,180,True,place_category,Explora una emocionante Monólogo de contemporánea dentro de la categoría de Cultura
+112,Taller interactivo en galería de arte,Cultura,Museos,Indoor,18,28,120,True,place_category,Explora una emocionante Taller interactivo en galería de arte dentro de la categoría de Cultura
+113,Clase de aeróbics fusión,Deporte,Fitness,Outdoor,15,30,240,False,,Explora una emocionante Clase de aeróbics fusión dentro de la categoría de Deporte
+114,Clase de iniciación a hockey,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Clase de iniciación a hockey dentro de la categoría de Deporte
+115,Boot camp variada,Deporte,Fitness,Outdoor,15,30,30,False,,Explora una emocionante Boot camp variada dentro de la categoría de Deporte
+116,TRX medio,Deporte,Fitness,Outdoor,15,30,45,False,,Explora una emocionante TRX medio dentro de la categoría de Deporte
+117,Boot camp extrema,Deporte,Fitness,Outdoor,15,30,45,False,,Explora una emocionante Boot camp extrema dentro de la categoría de Deporte
+118,Experiencia gastronómica india,Gastronomía,Cocina internacional,Indoor,18,28,30,True,,Explora una emocionante Experiencia gastronómica india dentro de la categoría de Gastronomía
+119,Práctica de voleibol recreativo,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Práctica de voleibol recreativo dentro de la categoría de Deporte
+120,Taller de cocina mexicana,Gastronomía,Cocina internacional,Indoor,18,28,120,True,,Explora una emocionante Taller de cocina mexicana dentro de la categoría de Gastronomía
+121,Microteatro política,Cultura,Teatro,Indoor,18,28,60,True,place_category,Explora una emocionante Microteatro política dentro de la categoría de Cultura
+122,CrossFit WOD del día,Deporte,Fitness,Outdoor,15,30,90,False,,Explora una emocionante CrossFit WOD del día dentro de la categoría de Deporte
+123,Práctica de técnicas de bádminton,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Práctica de técnicas de bádminton dentro de la categoría de Deporte
+124,Curso de cocina vintage,Gastronomía,Cocina internacional,Indoor,18,28,45,True,,Explora una emocionante Curso de cocina vintage dentro de la categoría de Gastronomía
+125,Masterclass de tapas,Gastronomía,Cocina internacional,Indoor,18,28,180,True,,Explora una emocionante Masterclass de tapas dentro de la categoría de Gastronomía
+126,Clase de aeróbics contemporáneo,Deporte,Fitness,Outdoor,15,30,180,False,,Explora una emocionante Clase de aeróbics contemporáneo dentro de la categoría de Deporte
+127,Obra de teatro histórico,Cultura,Teatro,Indoor,18,28,30,True,place_category,Explora una emocionante Obra de teatro histórico dentro de la categoría de Cultura
+128,Clase de aeróbics moderno,Deporte,Fitness,Outdoor,15,30,60,False,,Explora una emocionante Clase de aeróbics moderno dentro de la categoría de Deporte
+129,Teatro infantil historia local,Cultura,Teatro,Indoor,18,28,30,True,place_category,Explora una emocionante Teatro infantil historia local dentro de la categoría de Cultura
+130,Visita nocturna a centro cultural,Cultura,Museos,Indoor,18,28,60,True,place_category,Explora una emocionante Visita nocturna a centro cultural dentro de la categoría de Cultura
+131,Entrenamiento de voleibol para principiante,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Entrenamiento de voleibol para principiante dentro de la categoría de Deporte
+132,Torneo informal de fútbol,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Torneo informal de fútbol dentro de la categoría de Deporte
+133,Recorrido temático por centro cultural,Cultura,Museos,Indoor,18,28,240,True,place_category,Explora una emocionante Recorrido temático por centro cultural dentro de la categoría de Cultura
+134,Exposición de artista internacional,Cultura,Museos,Indoor,18,28,45,True,place_category,Explora una emocionante Exposición de artista internacional dentro de la categoría de Cultura
+135,Cena temática mexicana,Gastronomía,Cocina internacional,Indoor,18,28,45,True,,Explora una emocionante Cena temática mexicana dentro de la categoría de Gastronomía
+136,Visita virtual al museo Moderno,Cultura,Museos,Indoor,18,28,180,True,place_category,Explora una emocionante Visita virtual al museo Moderno dentro de la categoría de Cultura
+137,Sesión de cardio suave,Deporte,Fitness,Outdoor,15,30,120,False,,Explora una emocionante Sesión de cardio suave dentro de la categoría de Deporte
+138,Clase de iniciación a bádminton,Deporte,Deportes de equipo,Outdoor,15,30,120,False,,Explora una emocionante Clase de iniciación a bádminton dentro de la categoría de Deporte
+139,Cena temática italiana,Gastronomía,Cocina internacional,Indoor,18,28,30,True,,Explora una emocionante Cena temática italiana dentro de la categoría de Gastronomía
+140,Visita virtual al museo Principal,Cultura,Museos,Indoor,18,28,90,True,place_category,Explora una emocionante Visita virtual al museo Principal dentro de la categoría de Cultura
+141,Obra de teatro documental,Cultura,Teatro,Indoor,18,28,60,True,place_category,Explora una emocionante Obra de teatro documental dentro de la categoría de Cultura
+142,Curso de cocina clásico,Gastronomía,Cocina internacional,Indoor,18,28,45,True,,Explora una emocionante Curso de cocina clásico dentro de la categoría de Gastronomía
+143,Visita virtual al museo Tecnológico,Cultura,Museos,Indoor,18,28,45,True,place_category,Explora una emocionante Visita virtual al museo Tecnológico dentro de la categoría de Cultura
+144,Clase de tacos tradicional,Gastronomía,Cocina internacional,Indoor,18,28,120,True,,Explora una emocionante Clase de tacos tradicional dentro de la categoría de Gastronomía
+145,Práctica de ping-pong recreativo,Deporte,Deportes de equipo,Outdoor,15,30,45,False,,Explora una emocionante Práctica de ping-pong recreativo dentro de la categoría de Deporte
+146,Visita nocturna a museo local,Cultura,Museos,Indoor,18,28,90,True,place_category,Explora una emocionante Visita nocturna a museo local dentro de la categoría de Cultura
+147,Mini torneo de bádminton,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Mini torneo de bádminton dentro de la categoría de Deporte
+148,Torneo informal de baloncesto,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Torneo informal de baloncesto dentro de la categoría de Deporte
+149,Curso de cocina futurista,Gastronomía,Cocina internacional,Indoor,18,28,45,True,,Explora una emocionante Curso de cocina futurista dentro de la categoría de Gastronomía
+150,Musical El Lago de los Cisnes,Cultura,Teatro,Indoor,18,28,240,True,place_category,Explora una emocionante Musical El Lago de los Cisnes dentro de la categoría de Cultura
+151,Entrenamiento de tenis para principiante,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Entrenamiento de tenis para principiante dentro de la categoría de Deporte
+152,Rutina de pesas para movilidad,Deporte,Fitness,Outdoor,15,30,240,False,,Explora una emocionante Rutina de pesas para movilidad dentro de la categoría de Deporte
+153,Sesión táctica de balonmano,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Sesión táctica de balonmano dentro de la categoría de Deporte
+154,Experiencia gastronómica peruana,Gastronomía,Cocina internacional,Indoor,18,28,120,True,,Explora una emocionante Experiencia gastronómica peruana dentro de la categoría de Gastronomía
+155,Práctica de técnicas de ping-pong,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Práctica de técnicas de ping-pong dentro de la categoría de Deporte
+156,Teatro experimental minimalista,Cultura,Teatro,Indoor,18,28,120,True,place_category,Explora una emocionante Teatro experimental minimalista dentro de la categoría de Cultura
+157,Exposición de artista moderno,Cultura,Museos,Indoor,18,28,180,True,place_category,Explora una emocionante Exposición de artista moderno dentro de la categoría de Cultura
+158,Clase de aeróbics clásico,Deporte,Fitness,Outdoor,15,30,60,False,,Explora una emocionante Clase de aeróbics clásico dentro de la categoría de Deporte
+159,Masterclass de tacos,Gastronomía,Cocina internacional,Indoor,18,28,60,True,,Explora una emocionante Masterclass de tacos dentro de la categoría de Gastronomía
+160,Exhibición especial de historia local,Cultura,Museos,Indoor,18,28,30,True,place_category,Explora una emocionante Exhibición especial de historia local dentro de la categoría de Cultura
+161,Degustación de fusión,Gastronomía,Cocina internacional,Indoor,18,28,60,True,,Explora una emocionante Degustación de fusión dentro de la categoría de Gastronomía
+162,Recorrido temático por museo histórico,Cultura,Museos,Indoor,18,28,240,True,place_category,Explora una emocionante Recorrido temático por museo histórico dentro de la categoría de Cultura
+163,Entrenamiento funcional avanzado,Deporte,Fitness,Outdoor,15,30,90,False,,Explora una emocionante Entrenamiento funcional avanzado dentro de la categoría de Deporte
+164,Partido amistoso de ping-pong,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Partido amistoso de ping-pong dentro de la categoría de Deporte
+165,Entrenamiento HIIT de 45 minutos,Deporte,Fitness,Outdoor,15,30,240,False,,Explora una emocionante Entrenamiento HIIT de 45 minutos dentro de la categoría de Deporte
+166,Degustación de latinoamericana,Gastronomía,Cocina internacional,Indoor,18,28,45,True,,Explora una emocionante Degustación de latinoamericana dentro de la categoría de Gastronomía
+167,Clase de aeróbics urbano,Deporte,Fitness,Outdoor,15,30,90,False,,Explora una emocionante Clase de aeróbics urbano dentro de la categoría de Deporte
+168,Tour privado por museo local,Cultura,Museos,Indoor,18,28,30,True,place_category,Explora una emocionante Tour privado por museo local dentro de la categoría de Cultura
+169,Juego en equipo de fútbol,Deporte,Deportes de equipo,Outdoor,15,30,45,False,,Explora una emocionante Juego en equipo de fútbol dentro de la categoría de Deporte
+170,Sesión táctica de baloncesto,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Sesión táctica de baloncesto dentro de la categoría de Deporte
+171,Tour privado por museo del cine,Cultura,Museos,Indoor,18,28,240,True,place_category,Explora una emocionante Tour privado por museo del cine dentro de la categoría de Cultura
+172,Partido amistoso de balonmano,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Partido amistoso de balonmano dentro de la categoría de Deporte
+173,Musical Cenicienta,Cultura,Teatro,Indoor,18,28,180,True,place_category,Explora una emocionante Musical Cenicienta dentro de la categoría de Cultura
+174,Exposición temporal de mitología,Cultura,Museos,Indoor,18,28,240,True,place_category,Explora una emocionante Exposición temporal de mitología dentro de la categoría de Cultura
+175,Microteatro futurista,Cultura,Teatro,Indoor,18,28,90,True,place_category,Explora una emocionante Microteatro futurista dentro de la categoría de Cultura
+176,Demostración de cocina tailandesa,Gastronomía,Cocina internacional,Indoor,18,28,120,True,,Explora una emocionante Demostración de cocina tailandesa dentro de la categoría de Gastronomía
+177,Boot camp moderada,Deporte,Fitness,Outdoor,15,30,120,False,,Explora una emocionante Boot camp moderada dentro de la categoría de Deporte
+178,Exposición temporal de ciencias naturales,Cultura,Museos,Indoor,18,28,45,True,place_category,Explora una emocionante Exposición temporal de ciencias naturales dentro de la categoría de Cultura
+179,Juego en equipo de pádel,Deporte,Deportes de equipo,Outdoor,15,30,45,False,,Explora una emocionante Juego en equipo de pádel dentro de la categoría de Deporte
+180,Circuito de ejercicios naturaleza,Deporte,Fitness,Outdoor,15,30,240,False,,Explora una emocionante Circuito de ejercicios naturaleza dentro de la categoría de Deporte
+181,Rutina de pesas para cardio,Deporte,Fitness,Outdoor,15,30,30,False,,Explora una emocionante Rutina de pesas para cardio dentro de la categoría de Deporte
+182,Clase de aeróbics vintage,Deporte,Fitness,Outdoor,15,30,90,False,,Explora una emocionante Clase de aeróbics vintage dentro de la categoría de Deporte
+183,Exhibición especial de naturaleza,Cultura,Museos,Indoor,18,28,60,True,place_category,Explora una emocionante Exhibición especial de naturaleza dentro de la categoría de Cultura
+184,Juego en equipo de hockey,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Juego en equipo de hockey dentro de la categoría de Deporte
+185,Tour privado por museo interactivo,Cultura,Museos,Indoor,18,28,240,True,place_category,Explora una emocionante Tour privado por museo interactivo dentro de la categoría de Cultura
+186,Tour privado por museo de la ciencia,Cultura,Museos,Indoor,18,28,180,True,place_category,Explora una emocionante Tour privado por museo de la ciencia dentro de la categoría de Cultura
+187,Musical El Rey León,Cultura,Teatro,Indoor,18,28,60,True,place_category,Explora una emocionante Musical El Rey León dentro de la categoría de Cultura
+188,Visita al museo de arquitectura,Cultura,Museos,Indoor,18,28,180,True,place_category,Explora una emocionante Visita al museo de arquitectura dentro de la categoría de Cultura
+189,Sesión de cardio alta,Deporte,Fitness,Outdoor,15,30,60,False,,Explora una emocionante Sesión de cardio alta dentro de la categoría de Deporte
+190,Musical El Fantasma,Cultura,Teatro,Indoor,18,28,30,True,place_category,Explora una emocionante Musical El Fantasma dentro de la categoría de Cultura
+191,Demostración de cocina francesa,Gastronomía,Cocina internacional,Indoor,18,28,90,True,,Explora una emocionante Demostración de cocina francesa dentro de la categoría de Gastronomía
+192,Exhibición especial de humanidades,Cultura,Museos,Indoor,18,28,120,True,place_category,Explora una emocionante Exhibición especial de humanidades dentro de la categoría de Cultura
+193,Taller interactivo en museo nacional,Cultura,Museos,Indoor,18,28,30,True,place_category,Explora una emocionante Taller interactivo en museo nacional dentro de la categoría de Cultura
+194,Visita al museo de tecnología,Cultura,Museos,Indoor,18,28,180,True,place_category,Explora una emocionante Visita al museo de tecnología dentro de la categoría de Cultura
+195,Juego en equipo de baloncesto,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Juego en equipo de baloncesto dentro de la categoría de Deporte
+196,Monólogo de social,Cultura,Teatro,Indoor,18,28,180,True,place_category,Explora una emocionante Monólogo de social dentro de la categoría de Cultura
+197,Clase de aeróbics retro,Deporte,Fitness,Outdoor,15,30,180,False,,Explora una emocionante Clase de aeróbics retro dentro de la categoría de Deporte
+198,Monólogo de clásica,Cultura,Teatro,Indoor,18,28,60,True,place_category,Explora una emocionante Monólogo de clásica dentro de la categoría de Cultura
+199,Workshop de clásica culinaria,Gastronomía,Cocina internacional,Indoor,18,28,60,True,,Explora una emocionante Workshop de clásica culinaria dentro de la categoría de Gastronomía
+200,Entrenamiento HIIT de 20 minutos,Deporte,Fitness,Outdoor,15,30,240,False,,Explora una emocionante Entrenamiento HIIT de 20 minutos dentro de la categoría de Deporte
+1,Teatro infantil humanidades,Cultura,Teatro,Indoor,18,28,240,True,place_category,Explora una emocionante Teatro infantil humanidades dentro de la categoría de Cultura
+4,Rutina de pesas para estabilidad,Deporte,Fitness,Outdoor,15,30,30,False,,Explora una emocionante Rutina de pesas para estabilidad dentro de la categoría de Deporte
+5,Masterclass de curry,Gastronomía,Cocina internacional,Indoor,18,28,90,True,,Explora una emocionante Masterclass de curry dentro de la categoría de Gastronomía
+8,Teatro experimental vintage,Cultura,Teatro,Indoor,18,28,120,True,place_category,Explora una emocionante Teatro experimental vintage dentro de la categoría de Cultura
+10,Obra de teatro experimental,Cultura,Teatro,Indoor,18,28,60,True,place_category,Explora una emocionante Obra de teatro experimental dentro de la categoría de Cultura
+15,Musical Drácula,Cultura,Teatro,Indoor,18,28,30,True,place_category,Explora una emocionante Musical Drácula dentro de la categoría de Cultura
+17,Teatro infantil fotografía antigua,Cultura,Teatro,Indoor,18,28,45,True,place_category,Explora una emocionante Teatro infantil fotografía antigua dentro de la categoría de Cultura
+18,Tour guiado por galería de arte,Cultura,Museos,Indoor,18,28,60,True,place_category,Explora una emocionante Tour guiado por galería de arte dentro de la categoría de Cultura
+19,Taller de cocina marroquí,Gastronomía,Cocina internacional,Indoor,18,28,30,True,,Explora una emocionante Taller de cocina marroquí dentro de la categoría de Gastronomía
+20,Preparación de paella típico,Gastronomía,Cocina internacional,Indoor,18,28,180,True,,Explora una emocionante Preparación de paella típico dentro de la categoría de Gastronomía
+23,Torneo informal de bádminton,Deporte,Deportes de equipo,Outdoor,15,30,90,False,,Explora una emocionante Torneo informal de bádminton dentro de la categoría de Deporte
+25,Curso de cocina contemporáneo,Gastronomía,Cocina internacional,Indoor,18,28,120,True,,Explora una emocionante Curso de cocina contemporáneo dentro de la categoría de Gastronomía
+26,Práctica de hockey recreativo,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Práctica de hockey recreativo dentro de la categoría de Deporte
+27,Circuito de ejercicios arquitectura,Deporte,Fitness,Outdoor,15,30,60,False,,Explora una emocionante Circuito de ejercicios arquitectura dentro de la categoría de Deporte
+28,Curso de cocina retro,Gastronomía,Cocina internacional,Indoor,18,28,60,True,,Explora una emocionante Curso de cocina retro dentro de la categoría de Gastronomía
+30,Preparación de ramen típico,Gastronomía,Cocina internacional,Indoor,18,28,30,True,,Explora una emocionante Preparación de ramen típico dentro de la categoría de Gastronomía
+32,Exposición temporal de innovación,Cultura,Museos,Indoor,18,28,60,True,place_category,Explora una emocionante Exposición temporal de innovación dentro de la categoría de Cultura
+33,Visita nocturna a museo de la ciencia,Cultura,Museos,Indoor,18,28,60,True,place_category,Explora una emocionante Visita nocturna a museo de la ciencia dentro de la categoría de Cultura
+34,Sesión de cardio extrema,Deporte,Fitness,Outdoor,15,30,240,False,,Explora una emocionante Sesión de cardio extrema dentro de la categoría de Deporte
+36,Práctica de pádel recreativo,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Práctica de pádel recreativo dentro de la categoría de Deporte
+37,Degustación de africana,Gastronomía,Cocina internacional,Indoor,18,28,120,True,,Explora una emocionante Degustación de africana dentro de la categoría de Gastronomía
+40,Demostración de cocina brasileña,Gastronomía,Cocina internacional,Indoor,18,28,30,True,,Explora una emocionante Demostración de cocina brasileña dentro de la categoría de Gastronomía
+45,TRX novato,Deporte,Fitness,Outdoor,15,30,120,False,,Explora una emocionante TRX novato dentro de la categoría de Deporte
+49,Taller interactivo en museo histórico,Cultura,Museos,Indoor,18,28,45,True,place_category,Explora una emocionante Taller interactivo en museo histórico dentro de la categoría de Cultura
+50,Microteatro contemporánea,Cultura,Teatro,Indoor,18,28,45,True,place_category,Explora una emocionante Microteatro contemporánea dentro de la categoría de Cultura
+51,Workshop de minimalista culinaria,Gastronomía,Cocina internacional,Indoor,18,28,45,True,,Explora una emocionante Workshop de minimalista culinaria dentro de la categoría de Gastronomía
+55,Boot camp baja,Deporte,Fitness,Outdoor,15,30,120,False,,Explora una emocionante Boot camp baja dentro de la categoría de Deporte
+57,Musical Hamlet,Cultura,Teatro,Indoor,18,28,90,True,place_category,Explora una emocionante Musical Hamlet dentro de la categoría de Cultura
+58,Recorrido temático por museo nacional,Cultura,Museos,Indoor,18,28,240,True,place_category,Explora una emocionante Recorrido temático por museo nacional dentro de la categoría de Cultura
+59,Juego en equipo de ping-pong,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Juego en equipo de ping-pong dentro de la categoría de Deporte
+60,Taller de cocina india,Gastronomía,Cocina internacional,Indoor,18,28,240,True,,Explora una emocionante Taller de cocina india dentro de la categoría de Gastronomía
+61,Workshop de industrial culinaria,Gastronomía,Cocina internacional,Indoor,18,28,45,True,,Explora una emocionante Workshop de industrial culinaria dentro de la categoría de Gastronomía
+71,Práctica de balonmano recreativo,Deporte,Deportes de equipo,Outdoor,15,30,90,False,,Explora una emocionante Práctica de balonmano recreativo dentro de la categoría de Deporte
+73,Preparación de sushi típico,Gastronomía,Cocina internacional,Indoor,18,28,60,True,,Explora una emocionante Preparación de sushi típico dentro de la categoría de Gastronomía
+74,Curso de cocina fusión,Gastronomía,Cocina internacional,Indoor,18,28,120,True,,Explora una emocionante Curso de cocina fusión dentro de la categoría de Gastronomía
+76,Cena temática marroquí,Gastronomía,Cocina internacional,Indoor,18,28,45,True,,Explora una emocionante Cena temática marroquí dentro de la categoría de Gastronomía
+79,Teatro experimental retro,Cultura,Teatro,Indoor,18,28,90,True,place_category,Explora una emocionante Teatro experimental retro dentro de la categoría de Cultura
+81,Workshop de tradicional culinaria,Gastronomía,Cocina internacional,Indoor,18,28,45,True,,Explora una emocionante Workshop de tradicional culinaria dentro de la categoría de Gastronomía
+85,Visita al museo de arte contemporáneo,Cultura,Museos,Indoor,18,28,180,True,place_category,Explora una emocionante Visita al museo de arte contemporáneo dentro de la categoría de Cultura
+86,Experiencia gastronómica brasileña,Gastronomía,Cocina internacional,Indoor,18,28,240,True,,Explora una emocionante Experiencia gastronómica brasileña dentro de la categoría de Gastronomía
+90,Monólogo de moral,Cultura,Teatro,Indoor,18,28,240,True,place_category,Explora una emocionante Monólogo de moral dentro de la categoría de Cultura
+93,Workshop de fusión culinaria,Gastronomía,Cocina internacional,Indoor,18,28,120,True,,Explora una emocionante Workshop de fusión culinaria dentro de la categoría de Gastronomía
+94,Sesión táctica de fútbol,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Sesión táctica de fútbol dentro de la categoría de Deporte
+95,Exposición de artista local,Cultura,Museos,Indoor,18,28,45,True,place_category,Explora una emocionante Exposición de artista local dentro de la categoría de Cultura
+96,Taller de cocina italiana,Gastronomía,Cocina internacional,Indoor,18,28,30,True,,Explora una emocionante Taller de cocina italiana dentro de la categoría de Gastronomía
+100,Cena temática brasileña,Gastronomía,Cocina internacional,Indoor,18,28,45,True,,Explora una emocionante Cena temática brasileña dentro de la categoría de Gastronomía
+102,Experiencia gastronómica francesa,Gastronomía,Cocina internacional,Indoor,18,28,30,True,,Explora una emocionante Experiencia gastronómica francesa dentro de la categoría de Gastronomía
+103,Obra de teatro tragedia,Cultura,Teatro,Indoor,18,28,240,True,place_category,Explora una emocionante Obra de teatro tragedia dentro de la categoría de Cultura
+106,Obra de teatro policiaco,Cultura,Teatro,Indoor,18,28,240,True,place_category,Explora una emocionante Obra de teatro policiaco dentro de la categoría de Cultura
+109,Demostración de cocina japonesa,Gastronomía,Cocina internacional,Indoor,18,28,30,True,,Explora una emocionante Demostración de cocina japonesa dentro de la categoría de Gastronomía
+110,Curso de cocina urbano,Gastronomía,Cocina internacional,Indoor,18,28,240,True,,Explora una emocionante Curso de cocina urbano dentro de la categoría de Gastronomía
+112,Entrenamiento de pádel para maestro,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Entrenamiento de pádel para maestro dentro de la categoría de Deporte
+113,Monólogo de histórica,Cultura,Teatro,Indoor,18,28,120,True,place_category,Explora una emocionante Monólogo de histórica dentro de la categoría de Cultura
+114,Circuito de ejercicios cine,Deporte,Fitness,Outdoor,15,30,120,False,,Explora una emocionante Circuito de ejercicios cine dentro de la categoría de Deporte
+117,Juego en equipo de rugby,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Juego en equipo de rugby dentro de la categoría de Deporte
+119,Demostración de cocina marroquí,Gastronomía,Cocina internacional,Indoor,18,28,60,True,,Explora una emocionante Demostración de cocina marroquí dentro de la categoría de Gastronomía
+120,Clase de pizza tradicional,Gastronomía,Cocina internacional,Indoor,18,28,120,True,,Explora una emocionante Clase de pizza tradicional dentro de la categoría de Gastronomía
+121,Mini torneo de pádel,Deporte,Deportes de equipo,Outdoor,15,30,45,False,,Explora una emocionante Mini torneo de pádel dentro de la categoría de Deporte
+123,Circuito de ejercicios ciencia,Deporte,Fitness,Outdoor,15,30,120,False,,Explora una emocionante Circuito de ejercicios ciencia dentro de la categoría de Deporte
+125,Tour privado por museo histórico,Cultura,Museos,Indoor,18,28,90,True,place_category,Explora una emocionante Tour privado por museo histórico dentro de la categoría de Cultura
+127,Entrenamiento funcional profesional,Deporte,Fitness,Outdoor,15,30,240,False,,Explora una emocionante Entrenamiento funcional profesional dentro de la categoría de Deporte
+128,Exposición temporal de naturaleza,Cultura,Museos,Indoor,18,28,180,True,place_category,Explora una emocionante Exposición temporal de naturaleza dentro de la categoría de Cultura
+129,Workshop de molecular culinaria,Gastronomía,Cocina internacional,Indoor,18,28,60,True,,Explora una emocionante Workshop de molecular culinaria dentro de la categoría de Gastronomía
+132,Experiencia gastronómica japonesa,Gastronomía,Cocina internacional,Indoor,18,28,240,True,,Explora una emocionante Experiencia gastronómica japonesa dentro de la categoría de Gastronomía
+134,Demostración de cocina china,Gastronomía,Cocina internacional,Indoor,18,28,90,True,,Explora una emocionante Demostración de cocina china dentro de la categoría de Gastronomía
+136,Juego en equipo de bádminton,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Juego en equipo de bádminton dentro de la categoría de Deporte
+137,Degustación de europea,Gastronomía,Cocina internacional,Indoor,18,28,240,True,,Explora una emocionante Degustación de europea dentro de la categoría de Gastronomía
+138,Rutina de pesas para postura,Deporte,Fitness,Outdoor,15,30,90,False,,Explora una emocionante Rutina de pesas para postura dentro de la categoría de Deporte
+141,Sesión de cardio intensa,Deporte,Fitness,Outdoor,15,30,120,False,,Explora una emocionante Sesión de cardio intensa dentro de la categoría de Deporte
+143,Rutina de pesas para pérdida de peso,Deporte,Fitness,Outdoor,15,30,120,False,,Explora una emocionante Rutina de pesas para pérdida de peso dentro de la categoría de Deporte
+144,Visita virtual al museo Histórico,Cultura,Museos,Indoor,18,28,60,True,place_category,Explora una emocionante Visita virtual al museo Histórico dentro de la categoría de Cultura
+150,Torneo informal de voleibol,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Torneo informal de voleibol dentro de la categoría de Deporte
+152,TRX principiante,Deporte,Fitness,Outdoor,15,30,60,False,,Explora una emocionante TRX principiante dentro de la categoría de Deporte
+153,Teatro infantil naturaleza,Cultura,Teatro,Indoor,18,28,240,True,place_category,Explora una emocionante Teatro infantil naturaleza dentro de la categoría de Cultura
+154,Visita virtual al museo De la Ciudad,Cultura,Museos,Indoor,18,28,90,True,place_category,Explora una emocionante Visita virtual al museo De la Ciudad dentro de la categoría de Cultura
+155,Teatro experimental contemporáneo,Cultura,Teatro,Indoor,18,28,240,True,place_category,Explora una emocionante Teatro experimental contemporáneo dentro de la categoría de Cultura
+160,Exposición temporal de humanidades,Cultura,Museos,Indoor,18,28,120,True,place_category,Explora una emocionante Exposición temporal de humanidades dentro de la categoría de Cultura
+162,Masterclass de pizza,Gastronomía,Cocina internacional,Indoor,18,28,240,True,,Explora una emocionante Masterclass de pizza dentro de la categoría de Gastronomía
+166,Partido de voleibol en centro recreativo,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Partido de voleibol en centro recreativo dentro de la categoría de Deporte
+168,Teatro experimental clásico,Cultura,Teatro,Indoor,18,28,60,True,place_category,Explora una emocionante Teatro experimental clásico dentro de la categoría de Cultura
+170,Visita nocturna a museo del cine,Cultura,Museos,Indoor,18,28,60,True,place_category,Explora una emocionante Visita nocturna a museo del cine dentro de la categoría de Cultura
+171,Tour guiado por museo histórico,Cultura,Museos,Indoor,18,28,180,True,place_category,Explora una emocionante Tour guiado por museo histórico dentro de la categoría de Cultura
+172,Obra de teatro comedia,Cultura,Teatro,Indoor,18,28,120,True,place_category,Explora una emocionante Obra de teatro comedia dentro de la categoría de Cultura
+174,Taller interactivo en museo de la ciencia,Cultura,Museos,Indoor,18,28,240,True,place_category,Explora una emocionante Taller interactivo en museo de la ciencia dentro de la categoría de Cultura
+175,Microteatro familiar,Cultura,Teatro,Indoor,18,28,30,True,place_category,Explora una emocionante Microteatro familiar dentro de la categoría de Cultura
+176,Preparación de curry típico,Gastronomía,Cocina internacional,Indoor,18,28,30,True,,Explora una emocionante Preparación de curry típico dentro de la categoría de Gastronomía
+177,Workshop de creativa culinaria,Gastronomía,Cocina internacional,Indoor,18,28,45,True,,Explora una emocionante Workshop de creativa culinaria dentro de la categoría de Gastronomía
+178,Visita al museo de historia,Cultura,Museos,Indoor,18,28,30,True,place_category,Explora una emocionante Visita al museo de historia dentro de la categoría de Cultura
+180,Boot camp intensa,Deporte,Fitness,Outdoor,15,30,120,False,,Explora una emocionante Boot camp intensa dentro de la categoría de Deporte
+185,Torneo informal de ping-pong,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Torneo informal de ping-pong dentro de la categoría de Deporte
+187,Experiencia gastronómica mexicana,Gastronomía,Cocina internacional,Indoor,18,28,60,True,,Explora una emocionante Experiencia gastronómica mexicana dentro de la categoría de Gastronomía
+188,Partido amistoso de bádminton,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Partido amistoso de bádminton dentro de la categoría de Deporte
+189,Recorrido temático por museo local,Cultura,Museos,Indoor,18,28,60,True,place_category,Explora una emocionante Recorrido temático por museo local dentro de la categoría de Cultura
+190,Partido de pádel en polideportivo,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Partido de pádel en polideportivo dentro de la categoría de Deporte
+191,Cena temática francesa,Gastronomía,Cocina internacional,Indoor,18,28,90,True,,Explora una emocionante Cena temática francesa dentro de la categoría de Gastronomía
+193,Entrenamiento de fútbol para profesional,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Entrenamiento de fútbol para profesional dentro de la categoría de Deporte
+194,Partido de ping-pong en polideportivo,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Partido de ping-pong en polideportivo dentro de la categoría de Deporte
+195,Cena temática india,Gastronomía,Cocina internacional,Indoor,18,28,180,True,,Explora una emocionante Cena temática india dentro de la categoría de Gastronomía
+196,Clase de tapas tradicional,Gastronomía,Cocina internacional,Indoor,18,28,90,True,,Explora una emocionante Clase de tapas tradicional dentro de la categoría de Gastronomía
+197,Sesión táctica de ping-pong,Deporte,Deportes de equipo,Outdoor,15,30,90,False,,Explora una emocionante Sesión táctica de ping-pong dentro de la categoría de Deporte
+200,Obra de teatro fantasía,Cultura,Teatro,Indoor,18,28,60,True,place_category,Explora una emocionante Obra de teatro fantasía dentro de la categoría de Cultura
+3,Circuito de ejercicios pintura,Deporte,Fitness,Outdoor,15,30,90,False,,Explora una emocionante Circuito de ejercicios pintura dentro de la categoría de Deporte
+4,Visita nocturna a galería de arte,Cultura,Museos,Indoor,18,28,45,True,place_category,Explora una emocionante Visita nocturna a galería de arte dentro de la categoría de Cultura
+8,Entrenamiento HIIT de 105 minutos,Deporte,Fitness,Outdoor,15,30,180,False,,Explora una emocionante Entrenamiento HIIT de 105 minutos dentro de la categoría de Deporte
+13,Partido amistoso de hockey,Deporte,Deportes de equipo,Outdoor,15,30,120,False,,Explora una emocionante Partido amistoso de hockey dentro de la categoría de Deporte
+19,Partido de ping-pong en centro recreativo,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Partido de ping-pong en centro recreativo dentro de la categoría de Deporte
+21,Partido de pádel en playa,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Partido de pádel en playa dentro de la categoría de Deporte
+27,Partido de balonmano en parque local,Deporte,Deportes de equipo,Outdoor,15,30,90,False,,Explora una emocionante Partido de balonmano en parque local dentro de la categoría de Deporte
+35,Partido de bádminton en polideportivo,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Partido de bádminton en polideportivo dentro de la categoría de Deporte
+36,Cena temática china,Gastronomía,Cocina internacional,Indoor,18,28,120,True,,Explora una emocionante Cena temática china dentro de la categoría de Gastronomía
+37,Entrenamiento de voleibol para medio,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Entrenamiento de voleibol para medio dentro de la categoría de Deporte
+39,Microteatro social,Cultura,Teatro,Indoor,18,28,60,True,place_category,Explora una emocionante Microteatro social dentro de la categoría de Cultura
+43,Visita al museo de cine,Cultura,Museos,Indoor,18,28,180,True,place_category,Explora una emocionante Visita al museo de cine dentro de la categoría de Cultura
+44,Visita nocturna a museo interactivo,Cultura,Museos,Indoor,18,28,30,True,place_category,Explora una emocionante Visita nocturna a museo interactivo dentro de la categoría de Cultura
+45,Workshop de artesanal culinaria,Gastronomía,Cocina internacional,Indoor,18,28,240,True,,Explora una emocionante Workshop de artesanal culinaria dentro de la categoría de Gastronomía
+47,Tour guiado por museo nacional,Cultura,Museos,Indoor,18,28,60,True,place_category,Explora una emocionante Tour guiado por museo nacional dentro de la categoría de Cultura
+50,Visita virtual al museo Regional,Cultura,Museos,Indoor,18,28,30,True,place_category,Explora una emocionante Visita virtual al museo Regional dentro de la categoría de Cultura
+54,Sesión de cardio moderada,Deporte,Fitness,Outdoor,15,30,120,False,,Explora una emocionante Sesión de cardio moderada dentro de la categoría de Deporte
+56,Mini torneo de voleibol,Deporte,Deportes de equipo,Outdoor,15,30,90,False,,Explora una emocionante Mini torneo de voleibol dentro de la categoría de Deporte
+58,Entrenamiento HIIT de 150 minutos,Deporte,Fitness,Outdoor,15,30,120,False,,Explora una emocionante Entrenamiento HIIT de 150 minutos dentro de la categoría de Deporte
+60,Visita al museo de fotografía,Cultura,Museos,Indoor,18,28,60,True,place_category,Explora una emocionante Visita al museo de fotografía dentro de la categoría de Cultura
+61,Visita virtual al museo Artístico,Cultura,Museos,Indoor,18,28,120,True,place_category,Explora una emocionante Visita virtual al museo Artístico dentro de la categoría de Cultura
+65,Monólogo de futurista,Cultura,Teatro,Indoor,18,28,240,True,place_category,Explora una emocionante Monólogo de futurista dentro de la categoría de Cultura
+67,Entrenamiento de baloncesto para principiante,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Entrenamiento de baloncesto para principiante dentro de la categoría de Deporte
+69,Sesión táctica de rugby,Deporte,Deportes de equipo,Outdoor,15,30,120,False,,Explora una emocionante Sesión táctica de rugby dentro de la categoría de Deporte
+74,Clase de ceviche tradicional,Gastronomía,Cocina internacional,Indoor,18,28,180,True,,Explora una emocionante Clase de ceviche tradicional dentro de la categoría de Gastronomía
+76,Partido de voleibol en playa,Deporte,Deportes de equipo,Outdoor,15,30,90,False,,Explora una emocionante Partido de voleibol en playa dentro de la categoría de Deporte
+79,Clase de ramen tradicional,Gastronomía,Cocina internacional,Indoor,18,28,45,True,,Explora una emocionante Clase de ramen tradicional dentro de la categoría de Gastronomía
+82,Boot camp media,Deporte,Fitness,Outdoor,15,30,180,False,,Explora una emocionante Boot camp media dentro de la categoría de Deporte
+83,Entrenamiento de voleibol para maestro,Deporte,Deportes de equipo,Outdoor,15,30,120,False,,Explora una emocionante Entrenamiento de voleibol para maestro dentro de la categoría de Deporte
+86,Experiencia gastronómica marroquí,Gastronomía,Cocina internacional,Indoor,18,28,240,True,,Explora una emocionante Experiencia gastronómica marroquí dentro de la categoría de Gastronomía
+91,Práctica de técnicas de hockey,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Práctica de técnicas de hockey dentro de la categoría de Deporte
+92,Partido de pádel en zona deportiva,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Partido de pádel en zona deportiva dentro de la categoría de Deporte
+94,Visita al museo de escultura,Cultura,Museos,Indoor,18,28,120,True,place_category,Explora una emocionante Visita al museo de escultura dentro de la categoría de Cultura
+97,Entrenamiento HIIT de 135 minutos,Deporte,Fitness,Outdoor,15,30,90,False,,Explora una emocionante Entrenamiento HIIT de 135 minutos dentro de la categoría de Deporte
+99,Partido amistoso de voleibol,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Partido amistoso de voleibol dentro de la categoría de Deporte
+102,Circuito de ejercicios historia,Deporte,Fitness,Outdoor,15,30,240,False,,Explora una emocionante Circuito de ejercicios historia dentro de la categoría de Deporte
+106,Sesión de cardio adaptativa,Deporte,Fitness,Outdoor,15,30,240,False,,Explora una emocionante Sesión de cardio adaptativa dentro de la categoría de Deporte
+107,Taller interactivo en museo del cine,Cultura,Museos,Indoor,18,28,30,True,place_category,Explora una emocionante Taller interactivo en museo del cine dentro de la categoría de Cultura
+115,Sesión táctica de hockey,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Sesión táctica de hockey dentro de la categoría de Deporte
+118,Taller de cocina tailandesa,Gastronomía,Cocina internacional,Indoor,18,28,90,True,,Explora una emocionante Taller de cocina tailandesa dentro de la categoría de Gastronomía
+123,Rutina de pesas para tonificación,Deporte,Fitness,Outdoor,15,30,60,False,,Explora una emocionante Rutina de pesas para tonificación dentro de la categoría de Deporte
+124,Boot camp alta,Deporte,Fitness,Outdoor,15,30,90,False,,Explora una emocionante Boot camp alta dentro de la categoría de Deporte
+126,Entrenamiento de rugby para avanzado,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Entrenamiento de rugby para avanzado dentro de la categoría de Deporte
+127,Degustación de del medio oriente,Gastronomía,Cocina internacional,Indoor,18,28,240,True,,Explora una emocionante Degustación de del medio oriente dentro de la categoría de Gastronomía
+129,Práctica de baloncesto recreativo,Deporte,Deportes de equipo,Outdoor,15,30,120,False,,Explora una emocionante Práctica de baloncesto recreativo dentro de la categoría de Deporte
+134,Exposición temporal de ingeniería,Cultura,Museos,Indoor,18,28,180,True,place_category,Explora una emocionante Exposición temporal de ingeniería dentro de la categoría de Cultura
+135,Taller de cocina peruana,Gastronomía,Cocina internacional,Indoor,18,28,240,True,,Explora una emocionante Taller de cocina peruana dentro de la categoría de Gastronomía
+137,Workshop de moderna culinaria,Gastronomía,Cocina internacional,Indoor,18,28,180,True,,Explora una emocionante Workshop de moderna culinaria dentro de la categoría de Gastronomía
+143,Entrenamiento de tenis para maestro,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Entrenamiento de tenis para maestro dentro de la categoría de Deporte
+147,Cena temática peruana,Gastronomía,Cocina internacional,Indoor,18,28,90,True,,Explora una emocionante Cena temática peruana dentro de la categoría de Gastronomía
+148,Preparación de pizza típico,Gastronomía,Cocina internacional,Indoor,18,28,30,True,,Explora una emocionante Preparación de pizza típico dentro de la categoría de Gastronomía
+150,Taller interactivo en centro cultural,Cultura,Museos,Indoor,18,28,90,True,place_category,Explora una emocionante Taller interactivo en centro cultural dentro de la categoría de Cultura
+153,Clase de iniciación a balonmano,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Clase de iniciación a balonmano dentro de la categoría de Deporte
+159,Experiencia gastronómica china,Gastronomía,Cocina internacional,Indoor,18,28,90,True,,Explora una emocionante Experiencia gastronómica china dentro de la categoría de Gastronomía
+161,Entrenamiento HIIT de 90 minutos,Deporte,Fitness,Outdoor,15,30,240,False,,Explora una emocionante Entrenamiento HIIT de 90 minutos dentro de la categoría de Deporte
+163,Demostración de cocina peruana,Gastronomía,Cocina internacional,Indoor,18,28,120,True,,Explora una emocionante Demostración de cocina peruana dentro de la categoría de Gastronomía
+169,Musical Frankenstein,Cultura,Teatro,Indoor,18,28,90,True,place_category,Explora una emocionante Musical Frankenstein dentro de la categoría de Cultura
+177,Partido amistoso de tenis,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Partido amistoso de tenis dentro de la categoría de Deporte
+180,Degustación de tradicional,Gastronomía,Cocina internacional,Indoor,18,28,120,True,,Explora una emocionante Degustación de tradicional dentro de la categoría de Gastronomía
+181,Exposición de artista de renombre,Cultura,Museos,Indoor,18,28,90,True,place_category,Explora una emocionante Exposición de artista de renombre dentro de la categoría de Cultura
+182,Clase de aeróbics futurista,Deporte,Fitness,Outdoor,15,30,180,False,,Explora una emocionante Clase de aeróbics futurista dentro de la categoría de Deporte
+183,Sesión de cardio variada,Deporte,Fitness,Outdoor,15,30,120,False,,Explora una emocionante Sesión de cardio variada dentro de la categoría de Deporte
+184,Circuito de ejercicios fotografía,Deporte,Fitness,Outdoor,15,30,240,False,,Explora una emocionante Circuito de ejercicios fotografía dentro de la categoría de Deporte
+186,Masterclass de paella,Gastronomía,Cocina internacional,Indoor,18,28,30,True,,Explora una emocionante Masterclass de paella dentro de la categoría de Gastronomía
+193,Visita nocturna a museo histórico,Cultura,Museos,Indoor,18,28,90,True,place_category,Explora una emocionante Visita nocturna a museo histórico dentro de la categoría de Cultura
+197,Entrenamiento HIIT de 60 minutos,Deporte,Fitness,Outdoor,15,30,180,False,,Explora una emocionante Entrenamiento HIIT de 60 minutos dentro de la categoría de Deporte
+2,Entrenamiento de hockey para novato,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Entrenamiento de hockey para novato dentro de la categoría de Deporte
+7,Clase de paella tradicional,Gastronomía,Cocina internacional,Indoor,18,28,90,True,,Explora una emocionante Clase de paella tradicional dentro de la categoría de Gastronomía
+15,Preparación de tacos típico,Gastronomía,Cocina internacional,Indoor,18,28,90,True,,Explora una emocionante Preparación de tacos típico dentro de la categoría de Gastronomía
+17,Teatro infantil mitología,Cultura,Teatro,Indoor,18,28,240,True,place_category,Explora una emocionante Teatro infantil mitología dentro de la categoría de Cultura
+20,Taller de cocina china,Gastronomía,Cocina internacional,Indoor,18,28,45,True,,Explora una emocionante Taller de cocina china dentro de la categoría de Gastronomía
+21,Partido de baloncesto en centro recreativo,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Partido de baloncesto en centro recreativo dentro de la categoría de Deporte
+30,Entrenamiento HIIT de 180 minutos,Deporte,Fitness,Outdoor,15,30,240,False,,Explora una emocionante Entrenamiento HIIT de 180 minutos dentro de la categoría de Deporte
+32,Exposición de artista clásico,Cultura,Museos,Indoor,18,28,120,True,place_category,Explora una emocionante Exposición de artista clásico dentro de la categoría de Cultura
+40,Musical Romeo y Julieta,Cultura,Teatro,Indoor,18,28,60,True,place_category,Explora una emocionante Musical Romeo y Julieta dentro de la categoría de Cultura
+41,Partido de pádel en gimnasio,Deporte,Deportes de equipo,Outdoor,15,30,90,False,,Explora una emocionante Partido de pádel en gimnasio dentro de la categoría de Deporte
+42,Partido de voleibol en polideportivo,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Partido de voleibol en polideportivo dentro de la categoría de Deporte
+59,Exposición de artista emergente,Cultura,Museos,Indoor,18,28,180,True,place_category,Explora una emocionante Exposición de artista emergente dentro de la categoría de Cultura
+68,Partido de hockey en zona deportiva,Deporte,Deportes de equipo,Outdoor,15,30,45,False,,Explora una emocionante Partido de hockey en zona deportiva dentro de la categoría de Deporte
+72,Demostración de cocina mexicana,Gastronomía,Cocina internacional,Indoor,18,28,45,True,,Explora una emocionante Demostración de cocina mexicana dentro de la categoría de Gastronomía
+76,Teatro experimental moderno,Cultura,Teatro,Indoor,18,28,120,True,place_category,Explora una emocionante Teatro experimental moderno dentro de la categoría de Cultura
+81,Tour guiado por museo del cine,Cultura,Museos,Indoor,18,28,240,True,place_category,Explora una emocionante Tour guiado por museo del cine dentro de la categoría de Cultura
+82,Demostración de cocina india,Gastronomía,Cocina internacional,Indoor,18,28,45,True,,Explora una emocionante Demostración de cocina india dentro de la categoría de Gastronomía
+94,Visita al museo de pintura,Cultura,Museos,Indoor,18,28,30,True,place_category,Explora una emocionante Visita al museo de pintura dentro de la categoría de Cultura
+107,Práctica de bádminton recreativo,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Práctica de bádminton recreativo dentro de la categoría de Deporte
+113,Visita nocturna a museo nacional,Cultura,Museos,Indoor,18,28,30,True,place_category,Explora una emocionante Visita nocturna a museo nacional dentro de la categoría de Cultura
+119,Mini torneo de ping-pong,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Mini torneo de ping-pong dentro de la categoría de Deporte
+137,Microteatro clásica,Cultura,Teatro,Indoor,18,28,90,True,place_category,Explora una emocionante Microteatro clásica dentro de la categoría de Cultura
+138,Entrenamiento de rugby para medio,Deporte,Deportes de equipo,Outdoor,15,30,90,False,,Explora una emocionante Entrenamiento de rugby para medio dentro de la categoría de Deporte
+148,Partido de voleibol en parque local,Deporte,Deportes de equipo,Outdoor,15,30,45,False,,Explora una emocionante Partido de voleibol en parque local dentro de la categoría de Deporte
+151,Partido de pádel en parque local,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Partido de pádel en parque local dentro de la categoría de Deporte
+152,Partido amistoso de pádel,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Partido amistoso de pádel dentro de la categoría de Deporte
+154,Teatro experimental futurista,Cultura,Teatro,Indoor,18,28,90,True,place_category,Explora una emocionante Teatro experimental futurista dentro de la categoría de Cultura
+158,Entrenamiento de ping-pong para novato,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Entrenamiento de ping-pong para novato dentro de la categoría de Deporte
+161,Preparación de ceviche típico,Gastronomía,Cocina internacional,Indoor,18,28,60,True,,Explora una emocionante Preparación de ceviche típico dentro de la categoría de Gastronomía
+162,Experiencia gastronómica italiana,Gastronomía,Cocina internacional,Indoor,18,28,30,True,,Explora una emocionante Experiencia gastronómica italiana dentro de la categoría de Gastronomía
+170,Clase de pasta tradicional,Gastronomía,Cocina internacional,Indoor,18,28,240,True,,Explora una emocionante Clase de pasta tradicional dentro de la categoría de Gastronomía
+188,Tour guiado por museo de la ciencia,Cultura,Museos,Indoor,18,28,30,True,place_category,Explora una emocionante Tour guiado por museo de la ciencia dentro de la categoría de Cultura
+191,Mini torneo de tenis,Deporte,Deportes de equipo,Outdoor,15,30,90,False,,Explora una emocionante Mini torneo de tenis dentro de la categoría de Deporte
+194,Microteatro psicológica,Cultura,Teatro,Indoor,18,28,180,True,place_category,Explora una emocionante Microteatro psicológica dentro de la categoría de Cultura
+4,Partido de fútbol en parque local,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Partido de fútbol en parque local dentro de la categoría de Deporte
+7,Partido de pádel en centro deportivo,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Partido de pádel en centro deportivo dentro de la categoría de Deporte
+8,Degustación de centroamericana,Gastronomía,Cocina internacional,Indoor,18,28,45,True,,Explora una emocionante Degustación de centroamericana dentro de la categoría de Gastronomía
+12,Entrenamiento de fútbol para novato,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Entrenamiento de fútbol para novato dentro de la categoría de Deporte
+46,Circuito de ejercicios escultura,Deporte,Fitness,Outdoor,15,30,60,False,,Explora una emocionante Circuito de ejercicios escultura dentro de la categoría de Deporte
+47,Entrenamiento de fútbol para experto,Deporte,Deportes de equipo,Outdoor,15,30,120,False,,Explora una emocionante Entrenamiento de fútbol para experto dentro de la categoría de Deporte
+54,Mini torneo de rugby,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Mini torneo de rugby dentro de la categoría de Deporte
+65,Torneo informal de tenis,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Torneo informal de tenis dentro de la categoría de Deporte
+73,Mini torneo de baloncesto,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Mini torneo de baloncesto dentro de la categoría de Deporte
+80,Entrenamiento de bádminton para experto,Deporte,Deportes de equipo,Outdoor,15,30,45,False,,Explora una emocionante Entrenamiento de bádminton para experto dentro de la categoría de Deporte
+89,Clase de curry tradicional,Gastronomía,Cocina internacional,Indoor,18,28,30,True,,Explora una emocionante Clase de curry tradicional dentro de la categoría de Gastronomía
+91,Exposición temporal de historia local,Cultura,Museos,Indoor,18,28,45,True,place_category,Explora una emocionante Exposición temporal de historia local dentro de la categoría de Cultura
+122,Boot camp adaptativa,Deporte,Fitness,Outdoor,15,30,45,False,,Explora una emocionante Boot camp adaptativa dentro de la categoría de Deporte
+144,Partido de baloncesto en parque local,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Partido de baloncesto en parque local dentro de la categoría de Deporte
+145,Teatro infantil innovación,Cultura,Teatro,Indoor,18,28,45,True,place_category,Explora una emocionante Teatro infantil innovación dentro de la categoría de Cultura
+159,Exhibición especial de mitología,Cultura,Museos,Indoor,18,28,45,True,place_category,Explora una emocionante Exhibición especial de mitología dentro de la categoría de Cultura
+161,Circuito de ejercicios tecnología,Deporte,Fitness,Outdoor,15,30,45,False,,Explora una emocionante Circuito de ejercicios tecnología dentro de la categoría de Deporte
+163,Clase de iniciación a fútbol,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Clase de iniciación a fútbol dentro de la categoría de Deporte
+171,Entrenamiento de balonmano para principiante,Deporte,Deportes de equipo,Outdoor,15,30,90,False,,Explora una emocionante Entrenamiento de balonmano para principiante dentro de la categoría de Deporte
+174,Monólogo de familiar,Cultura,Teatro,Indoor,18,28,30,True,place_category,Explora una emocionante Monólogo de familiar dentro de la categoría de Cultura
+180,Clase de iniciación a baloncesto,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Clase de iniciación a baloncesto dentro de la categoría de Deporte
+187,Preparación de tapas típico,Gastronomía,Cocina internacional,Indoor,18,28,180,True,,Explora una emocionante Preparación de tapas típico dentro de la categoría de Gastronomía
+193,Entrenamiento de voleibol para avanzado,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Entrenamiento de voleibol para avanzado dentro de la categoría de Deporte
+7,Clase de iniciación a tenis,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Clase de iniciación a tenis dentro de la categoría de Deporte
+28,Entrenamiento de rugby para experto,Deporte,Deportes de equipo,Outdoor,15,30,90,False,,Explora una emocionante Entrenamiento de rugby para experto dentro de la categoría de Deporte
+37,Preparación de pasta típico,Gastronomía,Cocina internacional,Indoor,18,28,60,True,,Explora una emocionante Preparación de pasta típico dentro de la categoría de Gastronomía
+39,Partido de ping-pong en gimnasio,Deporte,Deportes de equipo,Outdoor,15,30,90,False,,Explora una emocionante Partido de ping-pong en gimnasio dentro de la categoría de Deporte
+42,Entrenamiento de baloncesto para avanzado,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Entrenamiento de baloncesto para avanzado dentro de la categoría de Deporte
+67,Exposición temporal de arte moderno,Cultura,Museos,Indoor,18,28,240,True,place_category,Explora una emocionante Exposición temporal de arte moderno dentro de la categoría de Cultura
+69,Partido de fútbol en cancha municipal,Deporte,Deportes de equipo,Outdoor,15,30,120,False,,Explora una emocionante Partido de fútbol en cancha municipal dentro de la categoría de Deporte
+82,Partido amistoso de fútbol,Deporte,Deportes de equipo,Outdoor,15,30,45,False,,Explora una emocionante Partido amistoso de fútbol dentro de la categoría de Deporte
+88,Entrenamiento HIIT de 120 minutos,Deporte,Fitness,Outdoor,15,30,120,False,,Explora una emocionante Entrenamiento HIIT de 120 minutos dentro de la categoría de Deporte
+96,Masterclass de sushi,Gastronomía,Cocina internacional,Indoor,18,28,240,True,,Explora una emocionante Masterclass de sushi dentro de la categoría de Gastronomía
+101,Partido de voleibol en cancha municipal,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Partido de voleibol en cancha municipal dentro de la categoría de Deporte
+104,Entrenamiento de fútbol para avanzado,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Entrenamiento de fútbol para avanzado dentro de la categoría de Deporte
+131,Partido de tenis en centro recreativo,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Partido de tenis en centro recreativo dentro de la categoría de Deporte
+135,Partido de tenis en centro deportivo,Deporte,Deportes de equipo,Outdoor,15,30,45,False,,Explora una emocionante Partido de tenis en centro deportivo dentro de la categoría de Deporte
+138,Curso de cocina moderno,Gastronomía,Cocina internacional,Indoor,18,28,60,True,,Explora una emocionante Curso de cocina moderno dentro de la categoría de Gastronomía
+148,Partido de baloncesto en polideportivo,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Partido de baloncesto en polideportivo dentro de la categoría de Deporte
+173,Musical Cats,Cultura,Teatro,Indoor,18,28,180,True,place_category,Explora una emocionante Musical Cats dentro de la categoría de Cultura
+176,Entrenamiento de ping-pong para profesional,Deporte,Deportes de equipo,Outdoor,15,30,90,False,,Explora una emocionante Entrenamiento de ping-pong para profesional dentro de la categoría de Deporte
+191,Entrenamiento de rugby para novato,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Entrenamiento de rugby para novato dentro de la categoría de Deporte
+200,Entrenamiento HIIT de 15 minutos,Deporte,Fitness,Outdoor,15,30,180,False,,Explora una emocionante Entrenamiento HIIT de 15 minutos dentro de la categoría de Deporte
+7,Torneo informal de pádel,Deporte,Deportes de equipo,Outdoor,15,30,120,False,,Explora una emocionante Torneo informal de pádel dentro de la categoría de Deporte
+42,Partido de ping-pong en zona deportiva,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Partido de ping-pong en zona deportiva dentro de la categoría de Deporte
+85,Partido de baloncesto en pista al aire libre,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Partido de baloncesto en pista al aire libre dentro de la categoría de Deporte
+108,Taller de cocina japonesa,Gastronomía,Cocina internacional,Indoor,18,28,180,True,,Explora una emocionante Taller de cocina japonesa dentro de la categoría de Gastronomía
+112,Entrenamiento HIIT de 30 minutos,Deporte,Fitness,Outdoor,15,30,120,False,,Explora una emocionante Entrenamiento HIIT de 30 minutos dentro de la categoría de Deporte
+113,Tour guiado por museo local,Cultura,Museos,Indoor,18,28,240,True,place_category,Explora una emocionante Tour guiado por museo local dentro de la categoría de Cultura
+127,Entrenamiento de balonmano para maestro,Deporte,Deportes de equipo,Outdoor,15,30,45,False,,Explora una emocionante Entrenamiento de balonmano para maestro dentro de la categoría de Deporte
+133,TRX maestro,Deporte,Fitness,Outdoor,15,30,30,False,,Explora una emocionante TRX maestro dentro de la categoría de Deporte
+135,Boot camp suave,Deporte,Fitness,Outdoor,15,30,180,False,,Explora una emocionante Boot camp suave dentro de la categoría de Deporte
+138,Partido de rugby en playa,Deporte,Deportes de equipo,Outdoor,15,30,45,False,,Explora una emocionante Partido de rugby en playa dentro de la categoría de Deporte
+142,Partido de rugby en centro recreativo,Deporte,Deportes de equipo,Outdoor,15,30,90,False,,Explora una emocionante Partido de rugby en centro recreativo dentro de la categoría de Deporte
+180,Entrenamiento de rugby para profesional,Deporte,Deportes de equipo,Outdoor,15,30,90,False,,Explora una emocionante Entrenamiento de rugby para profesional dentro de la categoría de Deporte
+7,Exhibición especial de fotografía antigua,Cultura,Museos,Indoor,18,28,240,True,place_category,Explora una emocionante Exhibición especial de fotografía antigua dentro de la categoría de Cultura
+11,Partido de hockey en playa,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Partido de hockey en playa dentro de la categoría de Deporte
+33,Entrenamiento de tenis para profesional,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Entrenamiento de tenis para profesional dentro de la categoría de Deporte
+40,Circuito de ejercicios arte contemporáneo,Deporte,Fitness,Outdoor,15,30,60,False,,Explora una emocionante Circuito de ejercicios arte contemporáneo dentro de la categoría de Deporte
+71,Práctica de técnicas de rugby,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Práctica de técnicas de rugby dentro de la categoría de Deporte
+108,Partido de ping-pong en playa,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Partido de ping-pong en playa dentro de la categoría de Deporte
+118,Teatro infantil ingeniería,Cultura,Teatro,Indoor,18,28,90,True,place_category,Explora una emocionante Teatro infantil ingeniería dentro de la categoría de Cultura
+121,Entrenamiento de pádel para experto,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Entrenamiento de pádel para experto dentro de la categoría de Deporte
+132,Entrenamiento de voleibol para profesional,Deporte,Deportes de equipo,Outdoor,15,30,120,False,,Explora una emocionante Entrenamiento de voleibol para profesional dentro de la categoría de Deporte
+180,Entrenamiento de tenis para intermedio,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Entrenamiento de tenis para intermedio dentro de la categoría de Deporte
+53,Partido de balonmano en centro recreativo,Deporte,Deportes de equipo,Outdoor,15,30,120,False,,Explora una emocionante Partido de balonmano en centro recreativo dentro de la categoría de Deporte
+61,Partido de tenis en pista al aire libre,Deporte,Deportes de equipo,Outdoor,15,30,45,False,,Explora una emocionante Partido de tenis en pista al aire libre dentro de la categoría de Deporte
+132,Entrenamiento de fútbol para principiante,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Entrenamiento de fútbol para principiante dentro de la categoría de Deporte
+138,Partido de voleibol en gimnasio,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Partido de voleibol en gimnasio dentro de la categoría de Deporte
+139,Partido de bádminton en centro recreativo,Deporte,Deportes de equipo,Outdoor,15,30,45,False,,Explora una emocionante Partido de bádminton en centro recreativo dentro de la categoría de Deporte
+154,Partido de tenis en playa,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Partido de tenis en playa dentro de la categoría de Deporte
+156,Entrenamiento de rugby para principiante,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Entrenamiento de rugby para principiante dentro de la categoría de Deporte
+179,Partido de ping-pong en centro deportivo,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Partido de ping-pong en centro deportivo dentro de la categoría de Deporte
+194,Clase de aeróbics minimalista,Deporte,Fitness,Outdoor,15,30,180,False,,Explora una emocionante Clase de aeróbics minimalista dentro de la categoría de Deporte
+29,Partido de baloncesto en centro deportivo,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Partido de baloncesto en centro deportivo dentro de la categoría de Deporte
+33,Entrenamiento funcional experto,Deporte,Fitness,Outdoor,15,30,60,False,,Explora una emocionante Entrenamiento funcional experto dentro de la categoría de Deporte
+44,Partido de rugby en zona deportiva,Deporte,Deportes de equipo,Outdoor,15,30,45,False,,Explora una emocionante Partido de rugby en zona deportiva dentro de la categoría de Deporte
+58,Entrenamiento de ping-pong para maestro,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Entrenamiento de ping-pong para maestro dentro de la categoría de Deporte
+65,Partido de pádel en centro recreativo,Deporte,Deportes de equipo,Outdoor,15,30,60,False,,Explora una emocionante Partido de pádel en centro recreativo dentro de la categoría de Deporte
+125,Partido de tenis en zona deportiva,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Partido de tenis en zona deportiva dentro de la categoría de Deporte
+134,Partido de tenis en gimnasio,Deporte,Deportes de equipo,Outdoor,15,30,180,False,,Explora una emocionante Partido de tenis en gimnasio dentro de la categoría de Deporte
+160,Partido de baloncesto en gimnasio,Deporte,Deportes de equipo,Outdoor,15,30,240,False,,Explora una emocionante Partido de baloncesto en gimnasio dentro de la categoría de Deporte
+180,Entrenamiento de baloncesto para intermedio,Deporte,Deportes de equipo,Outdoor,15,30,30,False,,Explora una emocionante Entrenamiento de baloncesto para intermedio dentro de la categoría de Deporte

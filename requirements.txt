@@ -1,0 +1,4 @@
+Flask==2.1.1
+requests==2.27.1
+python-dotenv==0.19.2
+geopy==2.2.0
