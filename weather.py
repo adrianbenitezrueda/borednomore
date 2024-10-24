@@ -2,6 +2,10 @@ import streamlit as st
 import requests
 from datetime import datetime
 from collections import Counter
+from geolocation import get_user_location  # Importar desde geolocation.py
+
+# Obtener la geolocalización del usuario desde geolocation.py
+nombre_municipio, codigo_municipio = get_user_location()
 
 # Cargar la API Key desde Streamlit Secrets
 AEMET_API_KEY = st.secrets["AEMET_API_KEY"]
