@@ -3,3 +3,4 @@ requests==2.27.1
 python-dotenv==0.19.2
 geopy==2.2.0
 python-google-places==1.4.1
+giphy-client==1.0.0
