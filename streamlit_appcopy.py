@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import requests
-from googleplaces import GooglePlaces
 from datetime import datetime
 
 # Configuración de la página
@@ -38,7 +37,16 @@ st.markdown("""
 google_api_key = st.secrets["GOOGLE_API_KEY"]
 aemet_api_key = st.secrets["AEMET_API_KEY"]
 
-# Función para obtener la ubicación del usuario usando Google Geocoding API
+# Cargar los datasets
+@st.cache_data
+def load_data():
+    indoor_activities = pd.read_csv('data/cleaned/home_activities.csv')
+    outdoor_activities = pd.read_csv('data/cleaned/outdoor_activities.csv')
+    municipios_aemet = pd.read_csv('data/raw/municipios_aemet.csv')
+    return indoor_activities, outdoor_activities, municipios_aemet
+
+indoor_activities, outdoor_activities, municipios_aemet = load_data()
+
 def get_user_location():
     url = f"https://maps.googleapis.com/maps/api/geocode/json?address=Cádiz,Spain&key={google_api_key}"
     try:
@@ -51,36 +59,150 @@ def get_user_location():
         st.error(f"Error al obtener la ubicación: {str(e)}")
     return None, None
 
-# Cargar los datasets
-@st.cache_data
-def load_data():
-    indoor_activities = pd.read_csv('data/cleaned/home_activities.csv')
-    outdoor_activities = pd.read_csv('data/cleaned/outdoor_activities.csv')
-    municipios_aemet = pd.read_csv('data/raw/municipios_aemet.csv')
-    return indoor_activities, outdoor_activities, municipios_aemet
-
-indoor_activities, outdoor_activities, municipios_aemet = load_data()
-
-# Función para buscar el municipio más cercano según la ubicación
-def get_nearest_municipio(lat, lon):
-    municipios_aemet['distancia'] = ((municipios_aemet['latitud_dec'] - lat)**2 + 
-                                     (municipios_aemet['longitud_dec'] - lon)**2)**0.5
-    return municipios_aemet.loc[municipios_aemet['distancia'].idxmin()]
-
-# Función para obtener el clima actual desde AEMET
-def get_weather(nearest_municipio):
-    municipio_id = nearest_municipio['id']
-    url = f"https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/diaria/{municipio_id}?api_key={aemet_api_key}"
+def obtener_municipio(latitud, longitud):
+    url = f"https://maps.googleapis.com/maps/api/geocode/json?latlng={latitud},{longitud}&key={google_api_key}"
     try:
         response = requests.get(url)
-        data = response.json()
-        return data.get('state', 'good')
+        if response.status_code == 200:
+            data = response.json()
+            if len(data['results']) > 0:
+                address_components = data['results'][0]['address_components']
+                municipio_locality = None
+                municipio_alternative = None
+                
+                # 1. Intentar obtener el 'locality' primero
+                for component in address_components:
+                    if 'locality' in component['types']:
+                        municipio_locality = component['long_name']
+                        # Verificar si el municipio está en el CSV
+                        if obtener_codigo_municipio(municipio_locality) is not None:
+                            return municipio_locality
+
+                # 2. Buscar en 'administrative_area_level_4' o superior
+                for result in data['results']:
+                    for component in result['address_components']:
+                        if 'locality' in component['types'] or 'administrative_area_level_4' in component['types']:
+                            municipio_alternative = component['long_name']
+                            if obtener_codigo_municipio(municipio_alternative) is not None:
+                                return municipio_alternative
+
+                # 3. Intentar con 'administrative_area_level_3'
+                for result in data['results']:
+                    for component in result['address_components']:
+                        if 'administrative_area_level_3' in component['types']:
+                            municipio_alternative = component['long_name']
+                            if obtener_codigo_municipio(municipio_alternative) is not None:
+                                return municipio_alternative
+        return None
+    except Exception as e:
+        st.error(f"Error al obtener el municipio: {str(e)}")
+        return None
+
+def obtener_codigo_municipio(municipio_nombre):
+    municipio_fila = municipios_aemet[municipios_aemet['nombre'].str.lower() == municipio_nombre.lower()]
+    if not municipio_fila.empty:
+        return municipio_fila.iloc[0]['id']
+    return None
+
+def get_nearest_municipio(lat, lon):
+    # Primero intentamos obtener el municipio por nombre
+    municipio_nombre = obtener_municipio(lat, lon)
+    if municipio_nombre:
+        codigo = obtener_codigo_municipio(municipio_nombre)
+        if codigo:
+            municipio_data = municipios_aemet[municipios_aemet['id'] == codigo].iloc[0]
+            return municipio_data
+
+    # Si no funciona, usamos el método de distancia como fallback
+    municipios_aemet['distancia'] = ((municipios_aemet['latitud_dec'] - lat)**2 + 
+                                    (municipios_aemet['longitud_dec'] - lon)**2)**0.5
+    return municipios_aemet.loc[municipios_aemet['distancia'].idxmin()]
+
+def obtener_bloque_tiempo(hora_actual):
+    bloques = [
+        (0, 6),
+        (6, 12),
+        (12, 18),
+        (18, 24)
+    ]
+    for inicio, fin in bloques:
+        if inicio <= hora_actual < fin:
+            return f"{inicio:02d}-{fin:02d}"
+    return None
+
+def obtener_viento_por_bloque(prediccion_hoy, bloque):
+    for viento in prediccion_hoy['viento']:
+        if viento['periodo'] == bloque:
+            return viento.get('velocidad', 'Información no disponible')
+    return 'Información no disponible'
+
+def obtener_lluvia_por_bloque(prediccion_hoy, bloque):
+    for precipitacion in prediccion_hoy['probPrecipitacion']:
+        if precipitacion['periodo'] == bloque:
+            return precipitacion.get('value', 'Información no disponible')
+    return 'Información no disponible'
+
+def get_weather(nearest_municipio):
+    municipio_id = nearest_municipio['id']
+    if municipio_id.startswith('id'):
+        municipio_id = municipio_id[2:]  # Eliminamos el "id" si existe
+        
+    url = f"https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/diaria/{municipio_id}"
+    headers = {
+        'api_key': aemet_api_key
+    }
+    
+    try:
+        # Primera llamada para obtener la URL de los datos
+        response = requests.get(url, headers=headers)
+        if response.status_code == 200:
+            data = response.json()
+            if 'datos' in data:
+                # Segunda llamada para obtener los datos del clima
+                datos_response = requests.get(data['datos'])
+                if datos_response.status_code == 200:
+                    clima_data = datos_response.json()
+                    
+                    # Obtener el primer día de predicción
+                    prediccion_hoy = clima_data[0]['prediccion']['dia'][0]
+                    
+                    # Obtener la hora actual y el bloque correspondiente
+                    hora_actual = datetime.now().hour
+                    bloque = obtener_bloque_tiempo(hora_actual)
+                    
+                    # Obtener probabilidad de lluvia y viento
+                    prob_lluvia = obtener_lluvia_por_bloque(prediccion_hoy, bloque)
+                    velocidad_viento = obtener_viento_por_bloque(prediccion_hoy, bloque)
+                    
+                    # Convertir a números si son strings
+                    try:
+                        prob_lluvia = float(prob_lluvia) if prob_lluvia != 'Información no disponible' else 0
+                        velocidad_viento = float(velocidad_viento) if velocidad_viento != 'Información no disponible' else 0
+                    except (ValueError, TypeError):
+                        return 'good'  # Si hay error en la conversión, asumimos buen tiempo
+                    
+                    # Para debugging
+                    st.sidebar.write(f"Prob. lluvia: {prob_lluvia}%")
+                    st.sidebar.write(f"Vel. viento: {velocidad_viento} km/h")
+                    
+                    # Determinar si el tiempo es bueno basado en los criterios
+                    if prob_lluvia > 30 or velocidad_viento > 50:
+                        return 'bad'
+                    return 'good'
+                    
+        return 'good'  # Si hay algún error en las llamadas, asumimos buen tiempo
     except Exception as e:
         st.warning("No se pudo obtener información del clima. Asumiendo buen tiempo.")
         return 'good'
 
 def suggest_task(is_good_weather, available_time, excluded_tasks=None):
-    all_activities = pd.concat([indoor_activities, outdoor_activities]) if is_good_weather else indoor_activities
+    if is_good_weather:
+        all_activities = pd.concat([indoor_activities, outdoor_activities])
+        st.sidebar.write("🎯 Buscando en actividades de interior y exterior")
+    else:
+        all_activities = indoor_activities
+        st.sidebar.write("🏠 Buscando solo en actividades de interior")
+        
     filtered_activities = all_activities[all_activities['Tiempo_Estimado_Minutos'] <= available_time]
     
     if excluded_tasks:
@@ -88,10 +210,19 @@ def suggest_task(is_good_weather, available_time, excluded_tasks=None):
     
     if filtered_activities.empty:
         return None
-    return filtered_activities.sample(n=1).iloc[0]
+        
+    selected_task = filtered_activities.sample(n=1).iloc[0]
+    st.sidebar.write(f"📍 Categoría seleccionada: {selected_task['Categoria_Principal']}")
+    return selected_task
 
 def suggest_similar_task(category, subcategory, available_time, is_good_weather, excluded_tasks=None):
-    all_activities = pd.concat([indoor_activities, outdoor_activities]) if is_good_weather else indoor_activities
+    if is_good_weather:
+        all_activities = pd.concat([indoor_activities, outdoor_activities])
+        st.sidebar.write("🎯 Buscando tarea similar en actividades de interior y exterior")
+    else:
+        all_activities = indoor_activities
+        st.sidebar.write("🏠 Buscando tarea similar solo en actividades de interior")
+        
     filtered_activities = all_activities[
         (all_activities['Categoria_Principal'] == category) &
         (all_activities['Subcategoria'] != subcategory) &
@@ -101,10 +232,20 @@ def suggest_similar_task(category, subcategory, available_time, is_good_weather,
     if excluded_tasks:
         filtered_activities = filtered_activities[~filtered_activities['Nombre_Tarea'].isin(excluded_tasks)]
         
-    return filtered_activities.sample(n=1).iloc[0] if not filtered_activities.empty else None
+    if not filtered_activities.empty:
+        selected_task = filtered_activities.sample(n=1).iloc[0]
+        st.sidebar.write(f"📍 Nueva subcategoría: {selected_task['Subcategoria']}")
+        return selected_task
+    return None
 
 def suggest_different_task(category, available_time, is_good_weather, excluded_tasks=None):
-    all_activities = pd.concat([indoor_activities, outdoor_activities]) if is_good_weather else indoor_activities
+    if is_good_weather:
+        all_activities = pd.concat([indoor_activities, outdoor_activities])
+        st.sidebar.write("🎯 Buscando tarea diferente en actividades de interior y exterior")
+    else:
+        all_activities = indoor_activities
+        st.sidebar.write("🏠 Buscando tarea diferente solo en actividades de interior")
+        
     filtered_activities = all_activities[
         (all_activities['Categoria_Principal'] != category) &
         (all_activities['Tiempo_Estimado_Minutos'] <= available_time)
@@ -113,7 +254,11 @@ def suggest_different_task(category, available_time, is_good_weather, excluded_t
     if excluded_tasks:
         filtered_activities = filtered_activities[~filtered_activities['Nombre_Tarea'].isin(excluded_tasks)]
         
-    return filtered_activities.sample(n=1).iloc[0] if not filtered_activities.empty else None
+    if not filtered_activities.empty:
+        selected_task = filtered_activities.sample(n=1).iloc[0]
+        st.sidebar.write(f"📍 Nueva categoría: {selected_task['Categoria_Principal']}")
+        return selected_task
+    return None
 
 def display_task_card(task):
     st.markdown(f"""
@@ -127,6 +272,9 @@ def display_task_card(task):
 def main():
     # Header con estilo
     st.markdown('# 🎯 Bored no more\n ## ¡Encuentra algo divertido que hacer en tu tiempo libre!')
+    
+    # Inicializar el estado del clima como 'good' por defecto
+    weather = 'good'
     
     # Sidebar con información del tiempo y ubicación
     with st.sidebar:
@@ -142,6 +290,9 @@ def main():
             st.markdown(f"### {weather_icon} Tiempo actual")
             st.write("Perfecto para actividades al aire libre" if weather == 'good' else "Mejor quedarse en interior")
 
+    # Definir is_good_weather aquí, después de obtener weather
+    is_good_weather = weather == 'good'
+    
     # Contenido principal
     col1, col2 = st.columns([2, 1])
     
@@ -156,6 +307,10 @@ def main():
 
         # Después del slider, añade esto
         if st.session_state.last_time != available_time:
+            # Inicializar excluded_tasks si no existe
+            if 'excluded_tasks' not in st.session_state:
+                st.session_state.excluded_tasks = set()
+                
             st.session_state.current_task = suggest_task(is_good_weather, available_time, st.session_state.excluded_tasks)
             if st.session_state.current_task is not None:
                 st.session_state.excluded_tasks.add(st.session_state.current_task['Nombre_Tarea'])
@@ -164,91 +319,4 @@ def main():
         # Mostrar el tiempo seleccionado de forma más visual
         hours = available_time // 60
         minutes = available_time % 60
-        time_text = f"{hours}h {minutes}min" if hours > 0 else f"{minutes}min"
-        st.markdown(f"<div class='highlight'>Tiempo seleccionado: {time_text}</div>", unsafe_allow_html=True)
-
-    # Contenedor para la tarea principal
-    task_container = st.container()
-    
-    # Contenedor para los botones
-    button_container = st.container()
-    
-    # Contenedor para los lugares
-    places_container = st.container()
-
-    is_good_weather = weather == 'good'
-    
-    # Inicializar o actualizar la lista de tareas excluidas
-    if 'excluded_tasks' not in st.session_state:
-        st.session_state.excluded_tasks = set()
-
-    # Obtener la tarea inicial si no existe
-    if 'current_task' not in st.session_state:
-        st.session_state.current_task = suggest_task(is_good_weather, available_time)
-        if st.session_state.current_task is not None:
-            st.session_state.excluded_tasks.add(st.session_state.current_task['Nombre_Tarea'])
-
-    # Mostrar la tarea actual
-    with task_container:
-        st.markdown("### 💡 Sugerencia de actividad")
-        if st.session_state.current_task is not None:
-            display_task_card(st.session_state.current_task)
-
-    # Botones de acción
-    with button_container:
-        col1, col2, col3 = st.columns(3)
-        
-        if col1.button('✅ ¡Voy a hacerlo!'):
-            with places_container:
-                st.success("¡Excelente elección! Aquí tienes algunos lugares cercanos donde puedes realizar esta actividad:")
-                places = find_nearby_places(st.session_state.current_task['Nombre_Tarea'], user_lat, user_lon)
-                if places:
-                    for place in places:
-                        st.markdown(f"""
-                        <div class='card'>
-                            <h4>🏢 {place.name}</h4>
-                            <p>📍 {place.vicinity}</p>
-                        </div>
-                        """, unsafe_allow_html=True)
-                else:
-                    st.info("No se encontraron lugares específicos para esta actividad en tu zona.")
-
-        if col2.button('🤔 Algo similar...'):
-            similar_task = suggest_similar_task(
-                st.session_state.current_task['Categoria_Principal'],
-                st.session_state.current_task['Subcategoria'],
-                available_time,
-                is_good_weather,
-                st.session_state.excluded_tasks
-            )
-            if similar_task is not None:
-                st.session_state.current_task = similar_task
-                st.session_state.excluded_tasks.add(similar_task['Nombre_Tarea'])
-                with task_container:
-                    st.markdown("### 💡 Nueva sugerencia de actividad")
-                    display_task_card(similar_task)
-            else:
-                st.warning("No encontramos actividades similares para el tiempo disponible.")
-
-        if col3.button('❌ Algo diferente'):
-            different_task = suggest_different_task(
-                st.session_state.current_task['Categoria_Principal'],
-                available_time,
-                is_good_weather,
-                st.session_state.excluded_tasks
-            )
-            if different_task is not None:
-                st.session_state.current_task = different_task
-                st.session_state.excluded_tasks.add(different_task['Nombre_Tarea'])
-                with task_container:
-                    st.markdown("### 💡 Nueva sugerencia de actividad")
-                    display_task_card(different_task)
-            else:
-                st.warning("No encontramos actividades diferentes para el tiempo disponible.")
-
-    # Footer
-    st.markdown("---")
-    st.markdown("Made with ❤️ using Streamlit")
-
-if __name__ == '__main__':
-    main()
+        time_
