@@ -147,7 +147,19 @@ def main():
     
     with col1:
         st.markdown("### ⏰ ¿Cuánto tiempo tienes disponible?")
-        available_time = st.slider("", 10, 240, 60, help="Arrastra para seleccionar los minutos disponibles")
+        # Antes del slider, añade esto para mantener el último valor
+        if 'last_time' not in st.session_state:
+            st.session_state.last_time = 60
+
+        # Modifica la línea del slider así
+        available_time = st.slider("", 10, 240, 60, help="Arrastra para seleccionar los minutos disponibles", key='time_slider')
+
+        # Después del slider, añade esto
+        if st.session_state.last_time != available_time:
+            st.session_state.current_task = suggest_task(is_good_weather, available_time, st.session_state.excluded_tasks)
+            if st.session_state.current_task is not None:
+                st.session_state.excluded_tasks.add(st.session_state.current_task['Nombre_Tarea'])
+            st.session_state.last_time = available_time
         
         # Mostrar el tiempo seleccionado de forma más visual
         hours = available_time // 60
