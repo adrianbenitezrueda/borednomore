@@ -127,7 +127,7 @@ def display_task_card(task):
 def main():
     # Header con estilo
     st.markdown('# 🎯 Bored no more')
-    st.markdown('## ¡Encuentra algo divertido que hacer!')
+    st.markdown('## ¡Encuentra algo divertido que hacer en tu tiempo libre!')
     
     # Sidebar con información del tiempo y ubicación
     with st.sidebar:
