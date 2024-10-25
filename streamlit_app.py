@@ -20,7 +20,8 @@ st.markdown("""
     .card {
         padding: 1.5rem;
         border-radius: 10px;
-        background-color: #f8f9fa;
+        border: 2px solid #f8f9fa;
+        background-color: transparent;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         margin-bottom: 1rem;
     }
