@@ -26,7 +26,6 @@ st.markdown("""
         margin-bottom: 1rem;
     }
     .highlight {
-        color: #222222 !important;
         border: 2px solid #e6f3ff;
         background-color: transparent;
         padding: 0.5rem;
