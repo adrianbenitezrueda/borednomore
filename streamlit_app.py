@@ -116,19 +116,55 @@ def obtener_municipio(latitud, longitud):
         return None
 
 def obtener_codigo_municipio(municipio_nombre):
+    """
+    Obtiene el código del municipio sin el prefijo 'id'
+    
+    Args:
+        municipio_nombre (str): Nombre del municipio
+        
+    Returns:
+        str: Código del municipio sin el prefijo 'id', o None si no se encuentra
+    """
     municipio_fila = municipios_aemet[municipios_aemet['nombre'].str.lower() == municipio_nombre.lower()]
     if not municipio_fila.empty:
-        return municipio_fila.iloc[0]['id']
+        codigo_completo = municipio_fila.iloc[0]['id']
+        # Si el código empieza con 'id', lo eliminamos
+        if codigo_completo.startswith('id'):
+            return codigo_completo[2:]
+        return codigo_completo
     return None
 
 def get_nearest_municipio(lat, lon):
+    """
+    Obtiene el municipio más cercano a las coordenadas dadas
+    
+    Args:
+        lat (float): Latitud
+        lon (float): Longitud
+        
+    Returns:
+        dict: Datos del municipio incluyendo el código sin prefijo
+    """
     # Primero intentamos obtener el municipio por nombre
     municipio_nombre = obtener_municipio(lat, lon)
     if municipio_nombre:
         codigo = obtener_codigo_municipio(municipio_nombre)
         if codigo:
-            municipio_data = municipios_aemet[municipios_aemet['id'] == codigo].iloc[0]
+            municipio_data = municipios_aemet[municipios_aemet['id'] == f"id{codigo}"].iloc[0].copy()
+            # Aseguramos que el código no tiene el prefijo 'id'
+            municipio_data['id'] = codigo
             return municipio_data
+
+    # Si no funciona, usamos el método de distancia como fallback
+    municipios_aemet['distancia'] = ((municipios_aemet['latitud_dec'] - lat)**2 + 
+                                    (municipios_aemet['longitud_dec'] - lon)**2)**0.5
+    municipio_data = municipios_aemet.loc[municipios_aemet['distancia'].idxmin()].copy()
+    
+    # Aseguramos que el código no tiene el prefijo 'id'
+    if municipio_data['id'].startswith('id'):
+        municipio_data['id'] = municipio_data['id'][2:]
+    
+    return municipio_data
 
     # Si no funciona, usamos el método de distancia como fallback
     municipios_aemet['distancia'] = ((municipios_aemet['latitud_dec'] - lat)**2 + 
