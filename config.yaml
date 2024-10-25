@@ -1,0 +1,60 @@
+# Application Configuration
+app:
+  name: "Bored No More"
+  description: "Activity recommendation tool based on location and weather"
+  version: "1.0.0"
+  author: "Adrián Benítez Rueda"
+  debug: false
+
+# Streamlit Configuration
+streamlit:
+  page_title: "Bored No More"
+  page_icon: "🎯"
+  layout: "wide"
+  theme:
+    primaryColor: "#4285f4"
+    backgroundColor: "#f8f9fa"
+    secondaryBackgroundColor: "#e6f3ff"
+    textColor: "#000000"
+
+# API Keys (to be stored in .streamlit/secrets.toml)
+api:
+  google:
+    required_scopes:
+      - "geocoding"
+      - "places"
+    timeout: 5000
+  aemet:
+    base_url: "https://opendata.aemet.es/opendata/api"
+    timeout: 5000
+
+# Data Sources
+data:
+  activities:
+    indoor_file: "data/cleaned/home_activities.csv"
+    outdoor_file: "data/cleaned/outdoor_activities.csv"
+  locations:
+    municipalities_file: "data/raw/municipios_aemet.csv"
+
+# Weather Thresholds
+weather:
+  rain_probability_threshold: 30  # % probability above which outdoor activities are not recommended
+  wind_speed_threshold: 50        # km/h above which outdoor activities are not recommended
+  time_blocks:
+    - "00-06"
+    - "06-12"
+    - "12-18"
+    - "18-24"
+
+# UI Styles
+styles:
+  css:
+    big_font: "font-size:25px !important; font-weight: bold;"
+    card: "padding: 1.5rem; border-radius: 10px; background-color: #f8f9fa; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); margin-bottom: 1rem;"
+    highlight: "background-color: #e6f3ff; padding: 0.5rem; border-radius: 5px; margin: 0.5rem 0;"
+    search_button: "display: inline-block; background-color: #4285f4; color: white !important; padding: 10px 20px; border-radius: 5px; text-decoration: none; margin-top: 10px; font-weight: 500; transition: background-color 0.2s ease; text-align: center;"
+
+# Cache Configuration
+cache:
+  data_ttl: 3600  # Time in seconds to cache loaded data
+  weather_ttl: 1800  # Time in seconds to cache weather data
