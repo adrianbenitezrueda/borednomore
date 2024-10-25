@@ -57,6 +57,14 @@ aemet_api_key = st.secrets["AEMET_API_KEY"]
 # Cargar los datasets
 @st.cache_data
 def load_data():
+    """
+    Carga los datasets de actividades y municipios desde los archivos CSV.
+    Returns:
+    indoor_activities (pd.DataFrame): Dataset de actividades de interior
+    outdoor_activities (pd.DataFrame): Dataset de actividades de exterior
+    municipios_aemet (pd.DataFrame): Dataset de municipios de AEMET
+
+    """
     indoor_activities = pd.read_csv('data/cleaned/home_activities.csv')
     outdoor_activities = pd.read_csv('data/cleaned/outdoor_activities.csv')
     municipios_aemet = pd.read_csv('data/raw/municipios_aemet.csv')
@@ -65,6 +73,15 @@ def load_data():
 indoor_activities, outdoor_activities, municipios_aemet = load_data()
 
 def get_user_location():
+
+    """
+    Obtiene la ubicación geográfica (latitud y longitud) de una dirección específica utilizando la API de Google Maps.
+    Returns:
+    tuple: Una tupla con la latitud y longitud de la ubicación si la solicitud es exitosa.
+           (None, None) si ocurre un error durante la solicitud o si la ubicación no se encuentra.
+    Excepciones:
+    Muestra un mensaje de error en la interfaz de usuario de Streamlit si ocurre una excepción durante la solicitud.
+    """
     url = f"https://maps.googleapis.com/maps/api/geocode/json?address=Cádiz,Spain&key={google_api_key}"
     try:
         response = requests.get(url)
@@ -77,6 +94,17 @@ def get_user_location():
     return None, None
 
 def obtener_municipio(latitud, longitud):
+    """
+    Obtiene el nombre del municipio más cercano a las coordenadas dadas utilizando la API de Google Maps.
+    Args:
+    latitud (float): Latitud de la ubicación.
+    longitud (float): Longitud de la ubicación.
+    Returns:
+    str: El nombre del municipio más cercano si la solicitud es exitosa.
+         None si ocurre un error durante la solicitud o si el municipio no se encuentra.
+         Excepciones:
+         Muestra un mensaje de error en la interfaz de usuario de Streamlit si ocurre una excepción durante la solicitud.
+    """
     url = f"https://maps.googleapis.com/maps/api/geocode/json?latlng={latitud},{longitud}&key={google_api_key}"
     try:
         response = requests.get(url)
@@ -117,13 +145,12 @@ def obtener_municipio(latitud, longitud):
 
 def obtener_codigo_municipio(municipio_nombre):
     """
-    Obtiene el código del municipio sin el prefijo 'id'
-    
+    Obtiene el código del municipio de AEMET a partir del nombre del municipio.
     Args:
-        municipio_nombre (str): Nombre del municipio
-        
+    municipio_nombre (str): Nombre del municipio.
     Returns:
-        str: Código del municipio sin el prefijo 'id', o None si no se encuentra
+    str: El código del municipio si se encuentra en el dataset de municipios de AEMET.
+         None si el municipio no se encuentra en el dataset.
     """
     municipio_fila = municipios_aemet[municipios_aemet['nombre'].str.lower() == municipio_nombre.lower()]
     if not municipio_fila.empty:
@@ -172,6 +199,9 @@ def get_nearest_municipio(lat, lon):
     return municipios_aemet.loc[municipios_aemet['distancia'].idxmin()]
 
 def obtener_bloque_tiempo(hora_actual):
+    """
+    Obtiene el bloque de tiempo correspondiente a la hora actual
+    """
     bloques = [
         (0, 6),
         (6, 12),
@@ -184,18 +214,32 @@ def obtener_bloque_tiempo(hora_actual):
     return None
 
 def obtener_viento_por_bloque(prediccion_hoy, bloque):
+    """
+    Obtiene la velocidad del viento para un bloque de tiempo específico
+    """
     for viento in prediccion_hoy['viento']:
         if viento['periodo'] == bloque:
             return viento.get('velocidad', 'Información no disponible')
     return 'Información no disponible'
 
 def obtener_lluvia_por_bloque(prediccion_hoy, bloque):
+    """
+    Obtiene la probabilidad de lluvia para un bloque de tiempo específico
+    """
     for precipitacion in prediccion_hoy['probPrecipitacion']:
         if precipitacion['periodo'] == bloque:
             return precipitacion.get('value', 'Información no disponible')
     return 'Información no disponible'
 
 def get_weather(nearest_municipio):
+    """
+    Obtiene la información del clima para el municipio más cercano
+    Args:
+        nearest_municipio (dict): Datos del municipio más cercano
+    Returns:
+        str: 'good' si el tiempo es bueno para actividades al aire libre.
+             'bad' si el tiempo no es adecuado para actividades al aire libre.
+    """
     municipio_id = nearest_municipio['id']
     if municipio_id.startswith('id'):
         municipio_id = municipio_id[2:]  # Eliminamos el "id" si existe
@@ -249,6 +293,15 @@ def get_weather(nearest_municipio):
         return 'good'
 
 def suggest_task(is_good_weather, available_time, excluded_tasks=None):
+    """
+    Sugiere una tarea basada en el clima y el tiempo disponible
+    Args:
+        is_good_weather (bool): Indica si el clima es bueno para actividades al aire libre.
+        available_time (int): Tiempo disponible en minutos.
+        excluded_tasks (set): Conjunto de tareas excluidas.
+    Returns:
+        pd.Series: Una fila de un DataFrame con la tarea sugerida
+    """
     if is_good_weather:
         all_activities = pd.concat([indoor_activities, outdoor_activities])
         st.sidebar.write("🎯 Buscando en actividades de interior y exterior")
@@ -269,6 +322,17 @@ def suggest_task(is_good_weather, available_time, excluded_tasks=None):
     return selected_task
 
 def suggest_similar_task(category, subcategory, available_time, is_good_weather, excluded_tasks=None):
+    """
+    Sugiere una tarea similar a la categoría y subcategoría dadas
+    Args:
+        category (str): Categoría principal de la tarea actual.
+        subcategory (str): Subcategoría de la tarea actual.
+        available_time (int): Tiempo disponible en minutos.
+        is_good_weather (bool): Indica si el clima es bueno para actividades al aire libre.
+        excluded_tasks (set): Conjunto de tareas excluidas.
+    Returns:
+        pd.Series: Una fila de un DataFrame con la tarea sugerida
+    """
     if is_good_weather:
         all_activities = pd.concat([indoor_activities, outdoor_activities])
         st.sidebar.write("🎯 Buscando tarea similar en actividades de interior y exterior")
@@ -292,6 +356,16 @@ def suggest_similar_task(category, subcategory, available_time, is_good_weather,
     return None
 
 def suggest_different_task(category, available_time, is_good_weather, excluded_tasks=None):
+    """
+    Sugiere una tarea diferente a la categoría dada
+    Args:
+        category (str): Categoría principal de la tarea actual.
+        available_time (int): Tiempo disponible en minutos.
+        is_good_weather (bool): Indica si el clima es bueno para actividades al aire libre.
+        excluded_tasks (set): Conjunto de tareas excluidas.
+    Returns:
+        pd.Series: Una fila de un DataFrame con la tarea sugerida
+    """
     if is_good_weather:
         all_activities = pd.concat([indoor_activities, outdoor_activities])
         st.sidebar.write("🎯 Buscando tarea diferente en actividades de interior y exterior")
@@ -314,6 +388,11 @@ def suggest_different_task(category, available_time, is_good_weather, excluded_t
     return None
 
 def display_task_card(task):
+    """
+    Muestra una tarjeta con la información de la tarea
+    Args:
+        task (pd.Series): Fila de un DataFrame con los datos de la tarea
+    """
     st.markdown(f"""
     <div class='card'>
         <h4>{task['Nombre_Tarea']}</h4>
@@ -323,6 +402,9 @@ def display_task_card(task):
     """, unsafe_allow_html=True)
 
 def main():
+   """
+   Función principal para la aplicación de Streamlit
+   """
    # Header con estilo
    st.markdown('# 🎯 Bored no more\n ## ¡Encuentra algo divertido que hacer en tu tiempo libre!')
    
