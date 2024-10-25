@@ -30,6 +30,23 @@ st.markdown("""
         border-radius: 5px;
         margin: 0.5rem 0;
     }
+    .search-button {
+        display: inline-block;
+        background-color: #4285f4;
+        color: white !important;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-top: 10px;
+        font-weight: 500;
+        transition: background-color 0.2s ease;
+        text-align: center;
+    }
+    .search-button:hover {
+        background-color: #357abd;
+        text-decoration: none;
+        color: white !important;
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -353,18 +370,20 @@ def main():
        
        if col1.button('✅ ¡Voy a hacerlo!'):
            with places_container:
-               st.success("¡Excelente elección! Aquí tienes algunos lugares cercanos donde puedes realizar esta actividad:")
-               places = find_nearby_places(st.session_state.current_task['Nombre_Tarea'], user_lat, user_lon)
-               if places:
-                   for place in places:
-                       st.markdown(f"""
-                       <div class='card'>
-                           <h4>🏢 {place.name}</h4>
-                           <p>📍 {place.vicinity}</p>
-                       </div>
-                       """, unsafe_allow_html=True)
-               else:
-                   st.info("No se encontraron lugares específicos para esta actividad en tu zona.")
+               # Construir la URL de búsqueda de Google
+               query = f"{st.session_state.current_task['Nombre_Tarea']} cómo hacer tutorial"
+               google_search_url = f"https://www.google.com/search?q={requests.utils.quote(query)}"
+               
+               st.success("¡Excelente elección! Aquí tienes algunos recursos que te pueden ayudar:")
+               st.markdown(f"""
+               <div class='card'>
+                   <h4>🔍 Buscar guías y tutoriales</h4>
+                   <p>Encuentra información útil sobre cómo realizar esta actividad</p>
+                   <a href="{google_search_url}" target="_blank" class="search-button">
+                       Buscar en Google 🔎
+                   </a>
+               </div>
+               """, unsafe_allow_html=True)
 
        if col2.button('🤔 Algo similar...'):
            similar_task = suggest_similar_task(
@@ -402,6 +421,3 @@ def main():
    # Footer
    st.markdown("---")
    st.markdown("Made with ❤️ using Streamlit")
-
-if __name__ == '__main__':
-   main()
