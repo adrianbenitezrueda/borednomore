@@ -20,14 +20,15 @@ st.markdown("""
     .card {
         padding: 1.5rem;
         border-radius: 10px;
-        color: #222222 !important;
-        background-color: #f8f9fa;
+        border: 2px solid #f8f9fa;
+        background-color: transparent;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         margin-bottom: 1rem;
     }
     .highlight {
         color: #222222 !important;
-        background-color: #e6f3ff;
+        border: 2px solid #e6f3ff;
+        background-color: transparent;
         padding: 0.5rem;
         border-radius: 5px;
         margin: 0.5rem 0;
